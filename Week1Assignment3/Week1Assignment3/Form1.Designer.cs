@@ -33,6 +33,7 @@
             this.calculateRadiusBtn = new System.Windows.Forms.Button();
             this.calculatedAreaOutputBox = new System.Windows.Forms.TextBox();
             this.areaOfCircleLabel = new System.Windows.Forms.Label();
+            this.clearBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // enterNumberLabel
@@ -56,7 +57,7 @@
             // 
             // calculateRadiusBtn
             // 
-            this.calculateRadiusBtn.Location = new System.Drawing.Point(145, 88);
+            this.calculateRadiusBtn.Location = new System.Drawing.Point(171, 126);
             this.calculateRadiusBtn.Name = "calculateRadiusBtn";
             this.calculateRadiusBtn.Size = new System.Drawing.Size(75, 23);
             this.calculateRadiusBtn.TabIndex = 2;
@@ -76,17 +77,28 @@
             // 
             this.areaOfCircleLabel.AutoSize = true;
             this.areaOfCircleLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.areaOfCircleLabel.Location = new System.Drawing.Point(235, 74);
+            this.areaOfCircleLabel.Location = new System.Drawing.Point(143, 97);
             this.areaOfCircleLabel.Name = "areaOfCircleLabel";
             this.areaOfCircleLabel.Size = new System.Drawing.Size(78, 13);
             this.areaOfCircleLabel.TabIndex = 4;
             this.areaOfCircleLabel.Text = "Area of a circle";
             // 
+            // clearBtn
+            // 
+            this.clearBtn.Location = new System.Drawing.Point(252, 126);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(75, 23);
+            this.clearBtn.TabIndex = 5;
+            this.clearBtn.Text = "Clear";
+            this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            // 
             // CalculateAreaOfACircle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 161);
+            this.ClientSize = new System.Drawing.Size(343, 161);
+            this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.areaOfCircleLabel);
             this.Controls.Add(this.calculatedAreaOutputBox);
             this.Controls.Add(this.calculateRadiusBtn);
@@ -107,6 +119,7 @@
         private System.Windows.Forms.Button calculateRadiusBtn;
         private System.Windows.Forms.TextBox calculatedAreaOutputBox;
         private System.Windows.Forms.Label areaOfCircleLabel;
+        private System.Windows.Forms.Button clearBtn;
     }
 }
 

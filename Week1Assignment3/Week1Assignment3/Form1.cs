@@ -45,11 +45,22 @@ namespace Week1Assignment3
 
         private void calculateRadiusBtn_Click(object sender, EventArgs e)
         {
+            try
+            { 
             double radius;
             double area;
             radius = double.Parse(radiusInputBox.Text);
             area = (Math.PI * (radius * radius));
-            calculatedAreaOutputBox.Text = area.ToString();
+            calculatedAreaOutputBox.Text = area.ToString("n3");
+        }
+            catch {
+                MessageBox.Show("Invalid Entry");
+        }
+        }
+
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            radiusInputBox.Text = "";
         }
     }
 }
