@@ -38,5 +38,10 @@ namespace Milestone1
                 "Your Date of birth is: " + dateOfBirthMonth + "-" + dateOfBirthDay + "-" + dateOfBirthYear + "\n" +
                 "Your User ID is: " + userId);
         }
+
+        public void Method()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
