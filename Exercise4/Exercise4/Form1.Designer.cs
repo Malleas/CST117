@@ -111,7 +111,7 @@
             this.Controls.Add(this.enterValueLabel);
             this.Controls.Add(this.calculateValueBtn);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Second Converter";
             this.ResumeLayout(false);
             this.PerformLayout();
 
