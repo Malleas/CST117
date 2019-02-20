@@ -36,8 +36,9 @@
             this.weaponGrpBox = new System.Windows.Forms.GroupBox();
             this.noneCheckBox = new System.Windows.Forms.CheckBox();
             this.bowCheckBox = new System.Windows.Forms.CheckBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.characterResultsRichTextBox = new System.Windows.Forms.RichTextBox();
             this.generateBtn = new System.Windows.Forms.Button();
+            this.clearBtn = new System.Windows.Forms.Button();
             this.weaponGrpBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,17 +132,17 @@
             this.bowCheckBox.Text = "Bow";
             this.bowCheckBox.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // characterResultsRichTextBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(280, 232);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(185, 66);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "";
+            this.characterResultsRichTextBox.Location = new System.Drawing.Point(280, 232);
+            this.characterResultsRichTextBox.Name = "characterResultsRichTextBox";
+            this.characterResultsRichTextBox.Size = new System.Drawing.Size(185, 66);
+            this.characterResultsRichTextBox.TabIndex = 8;
+            this.characterResultsRichTextBox.Text = "";
             // 
             // generateBtn
             // 
-            this.generateBtn.Location = new System.Drawing.Point(331, 323);
+            this.generateBtn.Location = new System.Drawing.Point(280, 318);
             this.generateBtn.Name = "generateBtn";
             this.generateBtn.Size = new System.Drawing.Size(75, 23);
             this.generateBtn.TabIndex = 9;
@@ -149,13 +150,24 @@
             this.generateBtn.UseVisualStyleBackColor = true;
             this.generateBtn.Click += new System.EventHandler(this.generateBtn_Click);
             // 
+            // clearBtn
+            // 
+            this.clearBtn.Location = new System.Drawing.Point(390, 318);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(75, 23);
+            this.clearBtn.TabIndex = 10;
+            this.clearBtn.Text = "Clear";
+            this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 372);
+            this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.generateBtn);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.characterResultsRichTextBox);
             this.Controls.Add(this.femaleRadioBtn);
             this.Controls.Add(this.maleRadioBtn);
             this.Controls.Add(this.raceSelectionListBox);
@@ -178,10 +190,11 @@
         private System.Windows.Forms.RadioButton femaleRadioBtn;
         private System.Windows.Forms.GroupBox genderGrpBox;
         private System.Windows.Forms.GroupBox weaponGrpBox;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox characterResultsRichTextBox;
         private System.Windows.Forms.CheckBox noneCheckBox;
         private System.Windows.Forms.CheckBox bowCheckBox;
         private System.Windows.Forms.Button generateBtn;
+        private System.Windows.Forms.Button clearBtn;
     }
 }
 

@@ -64,7 +64,15 @@ namespace ProgrammingExercise2
             Boolean isChecked = (swordCheckBox.Checked || bowCheckBox.Checked || noneCheckBox.Checked);
             if(isChecked == true)
             {
-                if (swordCheckBox.Checked == true)
+                if((swordCheckBox.Checked || bowCheckBox.Checked != false) && noneCheckBox.Checked == true)
+                {
+                    weapon = "Magic";
+                }
+                else if (swordCheckBox.Checked & bowCheckBox.Checked == true)
+                {
+                    weapon = "Sword and Bow";
+                }
+                else  if (swordCheckBox.Checked == true)
                 {
                     weapon = "Sword";
                 }
@@ -85,7 +93,7 @@ namespace ProgrammingExercise2
             }
 
 
-            richTextBox1.Text = output;
+            characterResultsRichTextBox.Text = output;
         }
 
         private void maleRadioBtn_CheckedChanged(object sender, EventArgs e)
@@ -96,6 +104,12 @@ namespace ProgrammingExercise2
         private void weaponGrpBox_Enter(object sender, EventArgs e)
         {
          
+        }
+
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            characterResultsRichTextBox.Text = "";
+            output = "";
         }
     }
 }
