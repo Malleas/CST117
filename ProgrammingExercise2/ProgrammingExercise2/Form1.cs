@@ -13,6 +13,9 @@ namespace ProgrammingExercise2
     public partial class Form1 : Form
     {
         String genderType;
+        String race;
+        String weapon = "";
+        String output;
         public Form1()
         {
             InitializeComponent();
@@ -30,21 +33,69 @@ namespace ProgrammingExercise2
 
         private void generateBtn_Click(object sender, EventArgs e)
         {
-            if(femaleRadioBtn.Checked == true)
+            if(raceSelectionListBox.SelectedIndex != -1)
             {
-                genderType = "Female";
+                race = raceSelectionListBox.SelectedItem.ToString();
+                output += "You've chosen to be a " + race + "\n";
             }
             else
             {
-                genderType = "Male";
+                MessageBox.Show("Please select a race for your hero");
             }
 
-            richTextBox1.Text = "Your choice in gender is: " + genderType;
+            if(femaleRadioBtn.Checked || maleRadioBtn.Checked != false)
+            {
+                if (femaleRadioBtn.Checked == true)
+                {
+                    genderType = "Female";
+                }
+                else
+                {
+                    genderType = "Male";
+                }
+                output += "who is " + genderType + "\n";
+            }
+            else
+            {
+                MessageBox.Show("Please select a gender");
+            }
+
+
+            Boolean isChecked = (swordCheckBox.Checked || bowCheckBox.Checked || noneCheckBox.Checked);
+            if(isChecked == true)
+            {
+                if (swordCheckBox.Checked == true)
+                {
+                    weapon = "Sword";
+                }
+
+                else if (bowCheckBox.Checked == true)
+                {
+                    weapon = "Bow";
+                }
+                else if (noneCheckBox.Checked == true)
+                {
+                    weapon = "Magic";
+                }
+                output += "and your weapon of choice is: " + weapon + "\n";
+            }
+            else
+            {
+                MessageBox.Show("Please select only a weapon");
+            }
+
+
+            richTextBox1.Text = output;
         }
 
         private void maleRadioBtn_CheckedChanged(object sender, EventArgs e)
         {
-            genderType = "Male";
+         
+        }
+
+        private void weaponGrpBox_Enter(object sender, EventArgs e)
+        {
+         
         }
     }
 }
