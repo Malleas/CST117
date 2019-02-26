@@ -21,53 +21,39 @@ namespace Exercise5
 
         private void calculateBtn_Click(object sender, EventArgs e)
         {
-            int terms = int.Parse(termsTextBox.Text);
-            
-            int constant = 4;
-           
-            
-            int i; 
-            for (i = 1; i < terms; i++)
+            int terms; //User entry and the length of the for loop
+            if (int.TryParse(termsTextBox.Text, out terms))
             {
-                int currentIndex = i;
-                double piValue = 0;
-                double negativeInput = 0;
-                double positiveInput = 0;
-                if (currentIndex % 2 != 0)
+                double constant = 4; //constant used for the equation, all parts are 4/n
+                double piValue = 0; //starting value of PI
+                int count = 1; //Count to keep track of n to increment it through the loop
+                int i;
+                for (i = 0; i < terms; i++)
                 {
-                    negativeInput = constant / (currentIndex + 2);
-                    MessageBox.Show(negativeInput.ToString("n5"));
-                    piValue -= negativeInput;
-                    MessageBox.Show(piValue.ToString("n10"));
+                    if (i % 2 == 0)//check if value is even
+                    {
+                        piValue += constant / (i + count);
+                    }
+                    else
+                    {
+                        piValue -= constant / (i + count);
+                    }
+                    count++;
                 }
-                else
-                {
-                    positiveInput = constant / ((currentIndex / currentIndex) + currentIndex);
-                    piValue += positiveInput;
-                    
-                }
-                
-                
-                
-                //piValueLabel.Text =foo.ToString();
-                
-               
+                apxValueOfPiLabel.Text = ("Approximate value of Pi after " + terms + " terms is: ");
+                piValueLabel.Text = piValue.ToString();
             }
-            apxValueOfPiLabel.Text = ("Approximate value of Pi after " + terms + " terms is: ");
-            
+            else
+            {
+                MessageBox.Show("Invalid Entry" + "\n" + "Please use numbers only");
+            }
         }
+           
 
         private void button1_Click(object sender, EventArgs e)
         {
             termsTextBox.Text = "";
             piValueLabel.Text = "";
-        }
-
-        private void blahBtn_Click(object sender, EventArgs e)
-        {
-            float foo = (4 - 4/3 + 4/5 - 4/7 + 4/9);
-            decimal bar = 4 - 4 / 3;
-            piValueLabel.Text = bar.ToString("n5");
         }
     }
 }

@@ -36,7 +36,6 @@
             this.termsTextBox = new System.Windows.Forms.TextBox();
             this.piValueLabel = new System.Windows.Forms.Label();
             this.clearBtn = new System.Windows.Forms.Button();
-            this.blahBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -102,22 +101,11 @@
             this.clearBtn.UseVisualStyleBackColor = true;
             this.clearBtn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // blahBtn
-            // 
-            this.blahBtn.Location = new System.Drawing.Point(137, 142);
-            this.blahBtn.Name = "blahBtn";
-            this.blahBtn.Size = new System.Drawing.Size(112, 43);
-            this.blahBtn.TabIndex = 7;
-            this.blahBtn.Text = "Blah";
-            this.blahBtn.UseVisualStyleBackColor = true;
-            this.blahBtn.Click += new System.EventHandler(this.blahBtn_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.blahBtn);
             this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.piValueLabel);
             this.Controls.Add(this.termsTextBox);
@@ -142,7 +130,6 @@
         private System.Windows.Forms.TextBox termsTextBox;
         private System.Windows.Forms.Label piValueLabel;
         private System.Windows.Forms.Button clearBtn;
-        private System.Windows.Forms.Button blahBtn;
     }
 }
 
