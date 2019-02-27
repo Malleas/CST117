@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -24,17 +25,17 @@ namespace ProgrammingProject3
             try {
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
-                    string foo;
+                    string text;
                     StreamReader inputFile;
                     inputFile = File.OpenText(openFile.FileName);
 
                     while (!inputFile.EndOfStream)
                     {
-                        foo = inputFile.ReadLine();
+                        text = inputFile.ReadLine();
                         
-                        string[] stringArray = foo.Split(' ');
+                        string[] stringArray = text.Split(' ');
                         Array.Sort(stringArray);
-                        resultsTextBox.Text = foo.ToString().ToLower();
+                        toLowerCaseTextBox.Text = text.ToString().ToLower();
 
                         firstWordTextBox.Text = stringArray[0];
                         lastWordTextBox.Text = stringArray[stringArray.Length - 1];
@@ -55,32 +56,13 @@ namespace ProgrammingProject3
                         }
                         longestWordTextBox.Text = longestWrod;
 
-                        int letterA = 0;
-                        int letterE = 0;
-                        int letterI = 0;
-                        int letterO = 0;
-                        int letterU = 0;
                         int vowelCount = 0;
                         int currentCount = 0;
                         string mostVowels = "";
                         foreach(string item in stringArray)
                         {
-                            if (item.Contains("a") || item.Contains("e") || item.Contains("i") || item.Contains("o") || item.Contains("u")){
-                                vowelCount ++;
-                            }else if (item.Contains("e"))
-                            {
-                                letterE += 1;
-                            }else if (item.Contains("i"))
-                            {
-                                letterI += 1;
-                            }else if (item.Contains("o"))
-                            {
-                                letterO += 1;
-                            }else if(item.Contains("u")){
-                                letterU += 1;
-                            }
-                            currentCount = (letterA + letterE + letterI + letterO + letterU);
-                            if (currentCount > vowelCount)
+                            currentCount = Regex.Matches(item, @"[aeiou]").Count;
+                            if(currentCount > vowelCount)
                             {
                                 vowelCount = currentCount;
                                 mostVowels = item;
@@ -89,6 +71,20 @@ namespace ProgrammingProject3
                             
                         }
                         mostVowelsTextBox.Text = mostVowels;
+
+                        string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                        StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "outPutStats.txt"));
+                        outputFile.WriteLine("To lowercase: " + "\n\n" + toLowerCaseTextBox.Text);
+                        outputFile.WriteLine("\n\n");
+                        outputFile.WriteLine("First word alphabetically is: " + firstWordTextBox.Text);
+                        outputFile.WriteLine("\n\n");
+                        outputFile.WriteLine("Last word alphabetically is: " + lastWordTextBox.Text);
+                        outputFile.WriteLine("\n\n");
+                        outputFile.WriteLine("The longest word is: " + longestWordTextBox.Text);
+                        outputFile.WriteLine("\n\n");
+                        outputFile.WriteLine("The word with the most vowels is: " + mostVowelsTextBox.Text);
+
+                        outputFile.Close();
                     }
                     
                 }

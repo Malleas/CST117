@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.resultsTextBox = new System.Windows.Forms.RichTextBox();
+            this.toLowerCaseTextBox = new System.Windows.Forms.RichTextBox();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.openFileBtn = new System.Windows.Forms.Button();
             this.convertToLowerLabel = new System.Windows.Forms.Label();
@@ -42,13 +42,13 @@
             this.mostVowelsTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // resultsTextBox
+            // toLowerCaseTextBox
             // 
-            this.resultsTextBox.Location = new System.Drawing.Point(220, 109);
-            this.resultsTextBox.Name = "resultsTextBox";
-            this.resultsTextBox.Size = new System.Drawing.Size(220, 145);
-            this.resultsTextBox.TabIndex = 0;
-            this.resultsTextBox.Text = "";
+            this.toLowerCaseTextBox.Location = new System.Drawing.Point(220, 109);
+            this.toLowerCaseTextBox.Name = "toLowerCaseTextBox";
+            this.toLowerCaseTextBox.Size = new System.Drawing.Size(220, 145);
+            this.toLowerCaseTextBox.TabIndex = 0;
+            this.toLowerCaseTextBox.Text = "";
             // 
             // openFile
             // 
@@ -130,7 +130,7 @@
             // 
             this.mostVowelsLabel.AutoSize = true;
             this.mostVowelsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mostVowelsLabel.Location = new System.Drawing.Point(105, 336);
+            this.mostVowelsLabel.Location = new System.Drawing.Point(115, 336);
             this.mostVowelsLabel.Name = "mostVowelsLabel";
             this.mostVowelsLabel.Size = new System.Drawing.Size(99, 20);
             this.mostVowelsLabel.TabIndex = 12;
@@ -158,7 +158,7 @@
             this.Controls.Add(this.firstSortedWordLabel);
             this.Controls.Add(this.convertToLowerLabel);
             this.Controls.Add(this.openFileBtn);
-            this.Controls.Add(this.resultsTextBox);
+            this.Controls.Add(this.toLowerCaseTextBox);
             this.Name = "Form1";
             this.Text = "Read A File";
             this.ResumeLayout(false);
@@ -168,7 +168,7 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox resultsTextBox;
+        private System.Windows.Forms.RichTextBox toLowerCaseTextBox;
         private System.Windows.Forms.OpenFileDialog openFile;
         private System.Windows.Forms.Button openFileBtn;
         private System.Windows.Forms.Label convertToLowerLabel;
