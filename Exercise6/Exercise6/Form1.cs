@@ -46,7 +46,7 @@ namespace Exercise6
             diceBox2.Text = rollOfDice2.ToString();
             diceBox2.SelectionAlignment = HorizontalAlignment.Center;
 
-            MessageBox.Show("It took " + counter.ToString() + " times to roll snake eyes!");
+            MessageBox.Show("It took " + counter.ToString() + " rolls to roll snake eyes!");
 
 
         }
