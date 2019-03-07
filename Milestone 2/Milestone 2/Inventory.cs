@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/**
+ * All work is original content created by Matt Sievers on 03-06-19
+ */
+
 namespace Milestone_2
 {
     class Inventory
