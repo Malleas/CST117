@@ -31,6 +31,8 @@
             this.rollDiceBtn = new System.Windows.Forms.Button();
             this.diceBox1 = new System.Windows.Forms.RichTextBox();
             this.diceBox2 = new System.Windows.Forms.RichTextBox();
+            this.diceRoll1Label = new System.Windows.Forms.Label();
+            this.diceRoll2Label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // rollDiceBtn
@@ -68,12 +70,36 @@
             this.diceBox2.TabIndex = 4;
             this.diceBox2.Text = "";
             // 
+            // diceRoll1Label
+            // 
+            this.diceRoll1Label.AutoSize = true;
+            this.diceRoll1Label.BackColor = System.Drawing.Color.Black;
+            this.diceRoll1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.diceRoll1Label.ForeColor = System.Drawing.Color.White;
+            this.diceRoll1Label.Location = new System.Drawing.Point(199, 79);
+            this.diceRoll1Label.Name = "diceRoll1Label";
+            this.diceRoll1Label.Size = new System.Drawing.Size(0, 54);
+            this.diceRoll1Label.TabIndex = 5;
+            // 
+            // diceRoll2Label
+            // 
+            this.diceRoll2Label.AutoSize = true;
+            this.diceRoll2Label.BackColor = System.Drawing.Color.Black;
+            this.diceRoll2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.diceRoll2Label.ForeColor = System.Drawing.Color.White;
+            this.diceRoll2Label.Location = new System.Drawing.Point(313, 79);
+            this.diceRoll2Label.Name = "diceRoll2Label";
+            this.diceRoll2Label.Size = new System.Drawing.Size(0, 54);
+            this.diceRoll2Label.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OliveDrab;
             this.ClientSize = new System.Drawing.Size(404, 261);
+            this.Controls.Add(this.diceRoll2Label);
+            this.Controls.Add(this.diceRoll1Label);
             this.Controls.Add(this.diceBox2);
             this.Controls.Add(this.diceBox1);
             this.Controls.Add(this.rollDiceBtn);
@@ -81,6 +107,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -89,6 +116,8 @@
         private System.Windows.Forms.Button rollDiceBtn;
         private System.Windows.Forms.RichTextBox diceBox1;
         private System.Windows.Forms.RichTextBox diceBox2;
+        private System.Windows.Forms.Label diceRoll1Label;
+        private System.Windows.Forms.Label diceRoll2Label;
     }
 }
 

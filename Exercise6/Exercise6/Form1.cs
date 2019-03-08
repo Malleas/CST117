@@ -31,7 +31,6 @@ namespace Exercise6
             int rollOfDice1;
             int rollOfDice2;
             int counter = 0;
-
             do
             {
                 dice1.Roll();
@@ -39,12 +38,10 @@ namespace Exercise6
                 dice2.Roll();
                 rollOfDice2 = dice2.getSideUp();
                 counter++;
-            } while (rollOfDice1 != 1 && rollOfDice2 != 1);
+            } while ((rollOfDice1 != 1) && (rollOfDice2 != 1));
 
-            diceBox1.Text = rollOfDice1.ToString();
-            diceBox1.SelectionAlignment = HorizontalAlignment.Center;
-            diceBox2.Text = rollOfDice2.ToString();
-            diceBox2.SelectionAlignment = HorizontalAlignment.Center;
+            diceRoll1Label.Text = rollOfDice1.ToString();
+            diceRoll2Label.Text = rollOfDice2.ToString();
 
             MessageBox.Show("It took " + counter.ToString() + " rolls to roll snake eyes!");
 
