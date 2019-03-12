@@ -64,16 +64,24 @@
             this.devideLabel1 = new System.Windows.Forms.Label();
             this.shortestStringGroupBox = new System.Windows.Forms.GroupBox();
             this.strInput2TextBox = new System.Windows.Forms.TextBox();
+            this.shortestStringResultLabel = new System.Windows.Forms.Label();
             this.strInput1TextBox = new System.Windows.Forms.TextBox();
             this.shortestStringBtn = new System.Windows.Forms.Button();
             this.strLabel2 = new System.Windows.Forms.Label();
             this.strLable1 = new System.Windows.Forms.Label();
-            this.shortestStringResultLabel = new System.Windows.Forms.Label();
+            this.largesDoubleGroupBox = new System.Windows.Forms.GroupBox();
+            this.largeDblInput2TextBox = new System.Windows.Forms.TextBox();
+            this.largeDblResultsLabel = new System.Windows.Forms.Label();
+            this.largeDblInput1TextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.largeDblInput2 = new System.Windows.Forms.Label();
+            this.largeDblInput1 = new System.Windows.Forms.Label();
             this.sumGroupBox.SuspendLayout();
             this.avgGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.shortestStringGroupBox.SuspendLayout();
+            this.largesDoubleGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // calculateBtn
@@ -414,6 +422,14 @@
             this.strInput2TextBox.Size = new System.Drawing.Size(138, 20);
             this.strInput2TextBox.TabIndex = 7;
             // 
+            // shortestStringResultLabel
+            // 
+            this.shortestStringResultLabel.AutoSize = true;
+            this.shortestStringResultLabel.Location = new System.Drawing.Point(59, 71);
+            this.shortestStringResultLabel.Name = "shortestStringResultLabel";
+            this.shortestStringResultLabel.Size = new System.Drawing.Size(0, 13);
+            this.shortestStringResultLabel.TabIndex = 17;
+            // 
             // strInput1TextBox
             // 
             this.strInput1TextBox.Location = new System.Drawing.Point(55, 15);
@@ -449,19 +465,77 @@
             this.strLable1.TabIndex = 12;
             this.strLable1.Text = "String 1";
             // 
-            // shortestStringResultLabel
+            // largesDoubleGroupBox
             // 
-            this.shortestStringResultLabel.AutoSize = true;
-            this.shortestStringResultLabel.Location = new System.Drawing.Point(59, 71);
-            this.shortestStringResultLabel.Name = "shortestStringResultLabel";
-            this.shortestStringResultLabel.Size = new System.Drawing.Size(0, 13);
-            this.shortestStringResultLabel.TabIndex = 17;
+            this.largesDoubleGroupBox.Controls.Add(this.largeDblInput2TextBox);
+            this.largesDoubleGroupBox.Controls.Add(this.largeDblResultsLabel);
+            this.largesDoubleGroupBox.Controls.Add(this.largeDblInput1TextBox);
+            this.largesDoubleGroupBox.Controls.Add(this.button1);
+            this.largesDoubleGroupBox.Controls.Add(this.largeDblInput2);
+            this.largesDoubleGroupBox.Controls.Add(this.largeDblInput1);
+            this.largesDoubleGroupBox.Location = new System.Drawing.Point(210, 216);
+            this.largesDoubleGroupBox.Name = "largesDoubleGroupBox";
+            this.largesDoubleGroupBox.Size = new System.Drawing.Size(200, 100);
+            this.largesDoubleGroupBox.TabIndex = 20;
+            this.largesDoubleGroupBox.TabStop = false;
+            this.largesDoubleGroupBox.Text = "Largest Double";
+            // 
+            // largeDblInput2TextBox
+            // 
+            this.largeDblInput2TextBox.Location = new System.Drawing.Point(127, 36);
+            this.largeDblInput2TextBox.Name = "largeDblInput2TextBox";
+            this.largeDblInput2TextBox.Size = new System.Drawing.Size(54, 20);
+            this.largeDblInput2TextBox.TabIndex = 7;
+            // 
+            // largeDblResultsLabel
+            // 
+            this.largeDblResultsLabel.AutoSize = true;
+            this.largeDblResultsLabel.Location = new System.Drawing.Point(86, 69);
+            this.largeDblResultsLabel.Name = "largeDblResultsLabel";
+            this.largeDblResultsLabel.Size = new System.Drawing.Size(0, 13);
+            this.largeDblResultsLabel.TabIndex = 17;
+            // 
+            // largeDblInput1TextBox
+            // 
+            this.largeDblInput1TextBox.Location = new System.Drawing.Point(127, 15);
+            this.largeDblInput1TextBox.Name = "largeDblInput1TextBox";
+            this.largeDblInput1TextBox.Size = new System.Drawing.Size(54, 20);
+            this.largeDblInput1TextBox.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(4, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 39);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Do It";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // largeDblInput2
+            // 
+            this.largeDblInput2.AutoSize = true;
+            this.largeDblInput2.Location = new System.Drawing.Point(89, 39);
+            this.largeDblInput2.Name = "largeDblInput2";
+            this.largeDblInput2.Size = new System.Drawing.Size(32, 13);
+            this.largeDblInput2.TabIndex = 13;
+            this.largeDblInput2.Text = "Dbl 2";
+            // 
+            // largeDblInput1
+            // 
+            this.largeDblInput1.AutoSize = true;
+            this.largeDblInput1.Location = new System.Drawing.Point(89, 18);
+            this.largeDblInput1.Name = "largeDblInput1";
+            this.largeDblInput1.Size = new System.Drawing.Size(32, 13);
+            this.largeDblInput1.TabIndex = 12;
+            this.largeDblInput1.Text = "Dbl 1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 471);
+            this.Controls.Add(this.largesDoubleGroupBox);
             this.Controls.Add(this.shortestStringGroupBox);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -481,6 +555,8 @@
             this.groupBox2.PerformLayout();
             this.shortestStringGroupBox.ResumeLayout(false);
             this.shortestStringGroupBox.PerformLayout();
+            this.largesDoubleGroupBox.ResumeLayout(false);
+            this.largesDoubleGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -528,6 +604,13 @@
         private System.Windows.Forms.Button shortestStringBtn;
         private System.Windows.Forms.Label strLabel2;
         private System.Windows.Forms.Label strLable1;
+        private System.Windows.Forms.GroupBox largesDoubleGroupBox;
+        private System.Windows.Forms.TextBox largeDblInput2TextBox;
+        private System.Windows.Forms.Label largeDblResultsLabel;
+        private System.Windows.Forms.TextBox largeDblInput1TextBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label largeDblInput2;
+        private System.Windows.Forms.Label largeDblInput1;
     }
 }
 

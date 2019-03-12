@@ -13,7 +13,6 @@ namespace Exercise7
     public partial class Form1 : Form
     {
         int sum;
-        double average;
         int randomSum;
         int randomNum1, randomNum2;
         public Form1()
@@ -44,8 +43,8 @@ namespace Exercise7
                 (double.TryParse(dbl4InputTextBox.Text, out num4)) &&
                 (double.TryParse(dbl5InputTextBox.Text, out num5)))
             {
-                AverageOfFiveDoubles(num1, num2, num3, num4, num5);
-                dblAvgResultLabel.Text = "The average of " + num1 + " " + num2 + " " + num3 + " " + num4 + " " + num5 +  " is " + average.ToString("n2");
+                double results = AverageOfFiveDoubles(num1, num2, num3, num4, num5);
+                dblAvgResultLabel.Text = "The average of " + num1 + " " + num2 + " " + num3 + " " + num4 + " " + num5 +  " is " + results.ToString("n2");
             }
             else
             {
@@ -89,6 +88,16 @@ namespace Exercise7
            string results = IsSmallerString(strInput1TextBox.Text, strInput2TextBox.Text);
             shortestStringResultLabel.Text = results;
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            double input1, input2;
+            if((double.TryParse(largeDblInput1TextBox.Text, out input1)) && (double.TryParse(largeDblInput2TextBox.Text, out input2)))
+            {
+
+                double results = IsLargestInArray(input1, input2);
+                largeDblResultsLabel.Text = results.ToString();
+            }
+        }
         private void clrBtn_Click(object sender, EventArgs e)
         {
             sumInput1.Text = "";
@@ -131,9 +140,10 @@ namespace Exercise7
             
         }
 
-        public void AverageOfFiveDoubles(double num1, double num2, double num3, double num4, double num5)
+        public double AverageOfFiveDoubles(double num1, double num2, double num3, double num4, double num5)
         {
-            average = (num1 + num2 + num3 + num4 + num5) / 5;
+            double average = (num1 + num2 + num3 + num4 + num5) / 5;
+            return average;
         }
 
         public bool IsDivisibleBy3(int num1, int num2, int num3)
@@ -160,6 +170,21 @@ namespace Exercise7
             }
         }
 
+       
+        public double IsLargestInArray(double input)
+        {
+            double[] doubleArray = new double[2];
+            double largestDouble = 0;
+            foreach(double index in doubleArray)
+            {
+                if(index >= largestDouble)
+                {
+                    largestDouble = index;
+                }
+                
+            }
+            return largestDouble;
+        }
        
 
        
