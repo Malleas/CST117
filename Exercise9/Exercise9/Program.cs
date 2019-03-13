@@ -1,22 +1,50 @@
-﻿using System;
+﻿//use for IC08
+//Lydia's code
+//Corrected by Matt Sievers
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace Exercise9
+namespace CST117_IC08_console
 {
-    static class Program
+    class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
+
+        /**
+         * Missing the public needed for a main method
+         * static void Main(string[] args)
+         */ 
+        public static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //make some sets
+            Set A = new Set();
+            Set B = new Set();
+
+            //put some stuff in the sets
+            Random r = new Random();
+            for (int i = 0; i < 10; i++)
+            {
+                A.addElement(r.Next(4));
+                B.addElement(r.Next(12));
+            }
+
+            //display each set and the union
+            Console.WriteLine("A: " + A);
+            Console.WriteLine("B: " + B);
+            Console.WriteLine("A union B: " + A.union(B));
+
+            //display original sets (should be unchanged)
+            Console.WriteLine("After union operation");
+            Console.WriteLine("A: " + A);
+            Console.WriteLine("B: " + B);
+            /**
+             * Added a Console.Readline to give the ability to read the output
+             */ 
+            Console.ReadLine();
+
         }
     }
 }
+ 
