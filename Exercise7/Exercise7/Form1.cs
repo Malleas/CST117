@@ -93,11 +93,51 @@ namespace Exercise7
             double input1, input2;
             if((double.TryParse(largeDblInput1TextBox.Text, out input1)) && (double.TryParse(largeDblInput2TextBox.Text, out input2)))
             {
-
-                double results = IsLargestInArray(input1, input2);
-                largeDblResultsLabel.Text = results.ToString();
+                double[] doubleArray = new double[2];
+                doubleArray[0] = input1;
+                doubleArray[1] = input2;
+                double results = IsLargestInArray(doubleArray);
+                largeDblResultsLabel.Text = "The largest Double in the array is: " + results.ToString();
+            }
+            else
+            {
+                ErrMsg();
             }
         }
+        private void _50RandomIntsBtn_Click(object sender, EventArgs e)
+        {
+            string results = _50RandomInts();
+            _50RandomIntsResultsRichTextBox.Text = results;
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            bool input1, input2;
+            if((bool.TryParse(boolValueInput1TextBox.Text, out input1)) && (bool.TryParse(boolValueInput2TextBox.Text, out input2))){
+                bool results = CompareValues(input1, input2);
+                boolValueResultsLabel.Text = results.ToString();
+            }
+            else
+            {
+                ErrMsg();
+            }
+            
+        }
+        private void intAndDblCalculateBtn_Click(object sender, EventArgs e)
+        {
+            int intInput;
+            double dblInput;
+            if((int.TryParse(_intInputTextBox.Text, out intInput)) && (double.TryParse(_dblInputTextBox.Text, out dblInput))){
+                string results = SumofIntAndDouble(intInput, dblInput);
+                intAndDblSumResultLabel.Text = "The sum of int " + intInput + " and double " + dblInput + "\n" + " is " + results;
+            }
+        }
+        private void _2DarrayCalcBtn_Click(object sender, EventArgs e)
+        {
+            int[,] intArray = new int[3, 2] { {15,3}, {7,2}, {102, 18} };
+            string results = _2DArrayAverageCalc(intArray);
+            _2dArrayResultsLabel.Text = "The average of the 2d array is: " + results;
+        }
+
         private void clrBtn_Click(object sender, EventArgs e)
         {
             sumInput1.Text = "";
@@ -117,6 +157,14 @@ namespace Exercise7
             strInput1TextBox.Text = "";
             strInput2TextBox.Text = "";
             shortestStringResultLabel.Text = "";
+            largeDblInput1.Text = "";
+            largeDblInput2.Text = "";
+            largeDblResultsLabel.Text = "";
+            _50RandomIntsResultsRichTextBox.Text = "";
+            boolValueInput1TextBox.Text = "";
+            boolValueInput2TextBox.Text = "";
+            boolValueResultsLabel.Text = "";
+            _2dArrayResultsLabel.Text = "";
 
         }
 
@@ -171,9 +219,8 @@ namespace Exercise7
         }
 
        
-        public double IsLargestInArray(double input)
+        public double IsLargestInArray(double[] doubleArray)
         {
-            double[] doubleArray = new double[2];
             double largestDouble = 0;
             foreach(double index in doubleArray)
             {
@@ -185,7 +232,57 @@ namespace Exercise7
             }
             return largestDouble;
         }
-       
+
+        public string _50RandomInts()
+        {
+            Random rand = new Random();
+            int[] intArray = new int[50];
+            StringBuilder sb = new StringBuilder();
+            string results = "";
+            for(int i = 0; i < intArray.Length; i++)
+            {
+                intArray[i] = rand.Next(500);
+                int currentValue = intArray[i];
+                sb.Append(currentValue + ", ");
+
+            }
+            return sb.ToString(); ;
+        }
+
+        public bool CompareValues(bool value1, bool value2)
+        {
+            bool input1 = value1;
+            bool input2 = value2;
+            if(input1 && input2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public string SumofIntAndDouble(int intInput, double dblInput)
+        {
+            string sum = (intInput + dblInput).ToString("n2");
+            return sum;
+        }
+
+        public string _2DArrayAverageCalc(int[,] intArray)
+        {
+            double totalAverage = 0;
+            double total = 0;
+            for(int i = 0; i < intArray.GetLength(0); i++)
+            {
+                for(int j = 0; j < intArray.GetLength(1); j++)
+                {
+                    total += intArray[i, j];
+                    totalAverage = total / 6;
+                }
+            }
+            return totalAverage.ToString("n2");
+        }
 
        
     }

@@ -76,12 +76,36 @@
             this.button1 = new System.Windows.Forms.Button();
             this.largeDblInput2 = new System.Windows.Forms.Label();
             this.largeDblInput1 = new System.Windows.Forms.Label();
+            this._50RandomIntsGroupBox = new System.Windows.Forms.GroupBox();
+            this._50RandomIntsBtn = new System.Windows.Forms.Button();
+            this._50RandomIntsResultsRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.compareBoolValuesGroupBox = new System.Windows.Forms.GroupBox();
+            this.boolValueInput2TextBox = new System.Windows.Forms.TextBox();
+            this.boolValueResultsLabel = new System.Windows.Forms.Label();
+            this.boolValueInput1TextBox = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.bool2Label = new System.Windows.Forms.Label();
+            this.bool1Lable = new System.Windows.Forms.Label();
+            this.intAndDblSumGroupBox = new System.Windows.Forms.GroupBox();
+            this.intAndDblSumResultLabel = new System.Windows.Forms.Label();
+            this._dblLable = new System.Windows.Forms.Label();
+            this._dblInputTextBox = new System.Windows.Forms.TextBox();
+            this._intLable = new System.Windows.Forms.Label();
+            this.intAndDblCalculateBtn = new System.Windows.Forms.Button();
+            this._intInputTextBox = new System.Windows.Forms.TextBox();
+            this._2dArrayGroupBox = new System.Windows.Forms.GroupBox();
+            this._2dArrayResultsLabel = new System.Windows.Forms.Label();
+            this._2DarrayCalcBtn = new System.Windows.Forms.Button();
             this.sumGroupBox.SuspendLayout();
             this.avgGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.shortestStringGroupBox.SuspendLayout();
             this.largesDoubleGroupBox.SuspendLayout();
+            this._50RandomIntsGroupBox.SuspendLayout();
+            this.compareBoolValuesGroupBox.SuspendLayout();
+            this.intAndDblSumGroupBox.SuspendLayout();
+            this._2dArrayGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // calculateBtn
@@ -272,7 +296,7 @@
             // 
             this.clrBtn.Location = new System.Drawing.Point(8, 421);
             this.clrBtn.Name = "clrBtn";
-            this.clrBtn.Size = new System.Drawing.Size(837, 23);
+            this.clrBtn.Size = new System.Drawing.Size(608, 23);
             this.clrBtn.TabIndex = 18;
             this.clrBtn.Text = "Clear All Fields";
             this.clrBtn.UseVisualStyleBackColor = true;
@@ -282,7 +306,7 @@
             // 
             this.exitBtn.Location = new System.Drawing.Point(8, 447);
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(837, 23);
+            this.exitBtn.Size = new System.Drawing.Size(608, 23);
             this.exitBtn.TabIndex = 19;
             this.exitBtn.Text = "Exit";
             this.exitBtn.UseVisualStyleBackColor = true;
@@ -530,11 +554,203 @@
             this.largeDblInput1.TabIndex = 12;
             this.largeDblInput1.Text = "Dbl 1";
             // 
+            // _50RandomIntsGroupBox
+            // 
+            this._50RandomIntsGroupBox.Controls.Add(this._50RandomIntsResultsRichTextBox);
+            this._50RandomIntsGroupBox.Controls.Add(this._50RandomIntsBtn);
+            this._50RandomIntsGroupBox.Location = new System.Drawing.Point(414, 20);
+            this._50RandomIntsGroupBox.Name = "_50RandomIntsGroupBox";
+            this._50RandomIntsGroupBox.Size = new System.Drawing.Size(200, 168);
+            this._50RandomIntsGroupBox.TabIndex = 21;
+            this._50RandomIntsGroupBox.TabStop = false;
+            this._50RandomIntsGroupBox.Text = "50 random ints";
+            // 
+            // _50RandomIntsBtn
+            // 
+            this._50RandomIntsBtn.Location = new System.Drawing.Point(4, 17);
+            this._50RandomIntsBtn.Name = "_50RandomIntsBtn";
+            this._50RandomIntsBtn.Size = new System.Drawing.Size(40, 145);
+            this._50RandomIntsBtn.TabIndex = 11;
+            this._50RandomIntsBtn.Text = "Do It";
+            this._50RandomIntsBtn.UseVisualStyleBackColor = true;
+            this._50RandomIntsBtn.Click += new System.EventHandler(this._50RandomIntsBtn_Click);
+            // 
+            // _50RandomIntsResultsRichTextBox
+            // 
+            this._50RandomIntsResultsRichTextBox.Location = new System.Drawing.Point(50, 19);
+            this._50RandomIntsResultsRichTextBox.Name = "_50RandomIntsResultsRichTextBox";
+            this._50RandomIntsResultsRichTextBox.Size = new System.Drawing.Size(144, 143);
+            this._50RandomIntsResultsRichTextBox.TabIndex = 12;
+            this._50RandomIntsResultsRichTextBox.Text = "";
+            // 
+            // compareBoolValuesGroupBox
+            // 
+            this.compareBoolValuesGroupBox.Controls.Add(this.boolValueInput2TextBox);
+            this.compareBoolValuesGroupBox.Controls.Add(this.boolValueResultsLabel);
+            this.compareBoolValuesGroupBox.Controls.Add(this.boolValueInput1TextBox);
+            this.compareBoolValuesGroupBox.Controls.Add(this.button2);
+            this.compareBoolValuesGroupBox.Controls.Add(this.bool2Label);
+            this.compareBoolValuesGroupBox.Controls.Add(this.bool1Lable);
+            this.compareBoolValuesGroupBox.Location = new System.Drawing.Point(415, 189);
+            this.compareBoolValuesGroupBox.Name = "compareBoolValuesGroupBox";
+            this.compareBoolValuesGroupBox.Size = new System.Drawing.Size(200, 100);
+            this.compareBoolValuesGroupBox.TabIndex = 20;
+            this.compareBoolValuesGroupBox.TabStop = false;
+            this.compareBoolValuesGroupBox.Text = "Compare bool values";
+            // 
+            // boolValueInput2TextBox
+            // 
+            this.boolValueInput2TextBox.Location = new System.Drawing.Point(55, 36);
+            this.boolValueInput2TextBox.Name = "boolValueInput2TextBox";
+            this.boolValueInput2TextBox.Size = new System.Drawing.Size(138, 20);
+            this.boolValueInput2TextBox.TabIndex = 7;
+            // 
+            // boolValueResultsLabel
+            // 
+            this.boolValueResultsLabel.AutoSize = true;
+            this.boolValueResultsLabel.Location = new System.Drawing.Point(59, 71);
+            this.boolValueResultsLabel.Name = "boolValueResultsLabel";
+            this.boolValueResultsLabel.Size = new System.Drawing.Size(0, 13);
+            this.boolValueResultsLabel.TabIndex = 17;
+            // 
+            // boolValueInput1TextBox
+            // 
+            this.boolValueInput1TextBox.Location = new System.Drawing.Point(55, 15);
+            this.boolValueInput1TextBox.Name = "boolValueInput1TextBox";
+            this.boolValueInput1TextBox.Size = new System.Drawing.Size(138, 20);
+            this.boolValueInput1TextBox.TabIndex = 6;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(9, 57);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(44, 39);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Do It";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // bool2Label
+            // 
+            this.bool2Label.AutoSize = true;
+            this.bool2Label.Location = new System.Drawing.Point(10, 39);
+            this.bool2Label.Name = "bool2Label";
+            this.bool2Label.Size = new System.Drawing.Size(43, 13);
+            this.bool2Label.TabIndex = 13;
+            this.bool2Label.Text = "Value 2";
+            // 
+            // bool1Lable
+            // 
+            this.bool1Lable.AutoSize = true;
+            this.bool1Lable.Location = new System.Drawing.Point(10, 18);
+            this.bool1Lable.Name = "bool1Lable";
+            this.bool1Lable.Size = new System.Drawing.Size(43, 13);
+            this.bool1Lable.TabIndex = 12;
+            this.bool1Lable.Text = "Valeu 1";
+            // 
+            // intAndDblSumGroupBox
+            // 
+            this.intAndDblSumGroupBox.Controls.Add(this.intAndDblSumResultLabel);
+            this.intAndDblSumGroupBox.Controls.Add(this._dblLable);
+            this.intAndDblSumGroupBox.Controls.Add(this._dblInputTextBox);
+            this.intAndDblSumGroupBox.Controls.Add(this._intLable);
+            this.intAndDblSumGroupBox.Controls.Add(this.intAndDblCalculateBtn);
+            this.intAndDblSumGroupBox.Controls.Add(this._intInputTextBox);
+            this.intAndDblSumGroupBox.Location = new System.Drawing.Point(210, 320);
+            this.intAndDblSumGroupBox.Name = "intAndDblSumGroupBox";
+            this.intAndDblSumGroupBox.Size = new System.Drawing.Size(200, 92);
+            this.intAndDblSumGroupBox.TabIndex = 7;
+            this.intAndDblSumGroupBox.TabStop = false;
+            this.intAndDblSumGroupBox.Text = "Sum of int and double";
+            // 
+            // intAndDblSumResultLabel
+            // 
+            this.intAndDblSumResultLabel.AutoSize = true;
+            this.intAndDblSumResultLabel.Location = new System.Drawing.Point(10, 65);
+            this.intAndDblSumResultLabel.Name = "intAndDblSumResultLabel";
+            this.intAndDblSumResultLabel.Size = new System.Drawing.Size(0, 13);
+            this.intAndDblSumResultLabel.TabIndex = 6;
+            // 
+            // _dblLable
+            // 
+            this._dblLable.AutoSize = true;
+            this._dblLable.Location = new System.Drawing.Point(134, 17);
+            this._dblLable.Name = "_dblLable";
+            this._dblLable.Size = new System.Drawing.Size(32, 13);
+            this._dblLable.TabIndex = 4;
+            this._dblLable.Text = "Dbl 1";
+            // 
+            // _dblInputTextBox
+            // 
+            this._dblInputTextBox.Location = new System.Drawing.Point(134, 33);
+            this._dblInputTextBox.Name = "_dblInputTextBox";
+            this._dblInputTextBox.Size = new System.Drawing.Size(32, 20);
+            this._dblInputTextBox.TabIndex = 2;
+            // 
+            // _intLable
+            // 
+            this._intLable.AutoSize = true;
+            this._intLable.Location = new System.Drawing.Point(93, 17);
+            this._intLable.Name = "_intLable";
+            this._intLable.Size = new System.Drawing.Size(28, 13);
+            this._intLable.TabIndex = 3;
+            this._intLable.Text = "Int 1";
+            // 
+            // intAndDblCalculateBtn
+            // 
+            this.intAndDblCalculateBtn.Location = new System.Drawing.Point(12, 30);
+            this.intAndDblCalculateBtn.Name = "intAndDblCalculateBtn";
+            this.intAndDblCalculateBtn.Size = new System.Drawing.Size(75, 23);
+            this.intAndDblCalculateBtn.TabIndex = 0;
+            this.intAndDblCalculateBtn.Text = "Calculate";
+            this.intAndDblCalculateBtn.UseVisualStyleBackColor = true;
+            this.intAndDblCalculateBtn.Click += new System.EventHandler(this.intAndDblCalculateBtn_Click);
+            // 
+            // _intInputTextBox
+            // 
+            this._intInputTextBox.Location = new System.Drawing.Point(96, 33);
+            this._intInputTextBox.Name = "_intInputTextBox";
+            this._intInputTextBox.Size = new System.Drawing.Size(32, 20);
+            this._intInputTextBox.TabIndex = 1;
+            // 
+            // _2dArrayGroupBox
+            // 
+            this._2dArrayGroupBox.Controls.Add(this._2dArrayResultsLabel);
+            this._2dArrayGroupBox.Controls.Add(this._2DarrayCalcBtn);
+            this._2dArrayGroupBox.Location = new System.Drawing.Point(416, 295);
+            this._2dArrayGroupBox.Name = "_2dArrayGroupBox";
+            this._2dArrayGroupBox.Size = new System.Drawing.Size(200, 84);
+            this._2dArrayGroupBox.TabIndex = 8;
+            this._2dArrayGroupBox.TabStop = false;
+            this._2dArrayGroupBox.Text = "Average of a 2d array";
+            // 
+            // _2dArrayResultsLabel
+            // 
+            this._2dArrayResultsLabel.AutoSize = true;
+            this._2dArrayResultsLabel.Location = new System.Drawing.Point(10, 50);
+            this._2dArrayResultsLabel.Name = "_2dArrayResultsLabel";
+            this._2dArrayResultsLabel.Size = new System.Drawing.Size(0, 13);
+            this._2dArrayResultsLabel.TabIndex = 6;
+            // 
+            // _2DarrayCalcBtn
+            // 
+            this._2DarrayCalcBtn.Location = new System.Drawing.Point(13, 19);
+            this._2DarrayCalcBtn.Name = "_2DarrayCalcBtn";
+            this._2DarrayCalcBtn.Size = new System.Drawing.Size(75, 23);
+            this._2DarrayCalcBtn.TabIndex = 0;
+            this._2DarrayCalcBtn.Text = "Calculate";
+            this._2DarrayCalcBtn.UseVisualStyleBackColor = true;
+            this._2DarrayCalcBtn.Click += new System.EventHandler(this._2DarrayCalcBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(857, 471);
+            this.ClientSize = new System.Drawing.Size(621, 471);
+            this.Controls.Add(this._2dArrayGroupBox);
+            this.Controls.Add(this.intAndDblSumGroupBox);
+            this.Controls.Add(this.compareBoolValuesGroupBox);
+            this.Controls.Add(this._50RandomIntsGroupBox);
             this.Controls.Add(this.largesDoubleGroupBox);
             this.Controls.Add(this.shortestStringGroupBox);
             this.Controls.Add(this.groupBox2);
@@ -557,6 +773,13 @@
             this.shortestStringGroupBox.PerformLayout();
             this.largesDoubleGroupBox.ResumeLayout(false);
             this.largesDoubleGroupBox.PerformLayout();
+            this._50RandomIntsGroupBox.ResumeLayout(false);
+            this.compareBoolValuesGroupBox.ResumeLayout(false);
+            this.compareBoolValuesGroupBox.PerformLayout();
+            this.intAndDblSumGroupBox.ResumeLayout(false);
+            this.intAndDblSumGroupBox.PerformLayout();
+            this._2dArrayGroupBox.ResumeLayout(false);
+            this._2dArrayGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -611,6 +834,26 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label largeDblInput2;
         private System.Windows.Forms.Label largeDblInput1;
+        private System.Windows.Forms.GroupBox _50RandomIntsGroupBox;
+        private System.Windows.Forms.RichTextBox _50RandomIntsResultsRichTextBox;
+        private System.Windows.Forms.Button _50RandomIntsBtn;
+        private System.Windows.Forms.GroupBox compareBoolValuesGroupBox;
+        private System.Windows.Forms.TextBox boolValueInput2TextBox;
+        private System.Windows.Forms.Label boolValueResultsLabel;
+        private System.Windows.Forms.TextBox boolValueInput1TextBox;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label bool2Label;
+        private System.Windows.Forms.Label bool1Lable;
+        private System.Windows.Forms.GroupBox intAndDblSumGroupBox;
+        private System.Windows.Forms.Label intAndDblSumResultLabel;
+        private System.Windows.Forms.Label _dblLable;
+        private System.Windows.Forms.TextBox _dblInputTextBox;
+        private System.Windows.Forms.Label _intLable;
+        private System.Windows.Forms.Button intAndDblCalculateBtn;
+        private System.Windows.Forms.TextBox _intInputTextBox;
+        private System.Windows.Forms.GroupBox _2dArrayGroupBox;
+        private System.Windows.Forms.Label _2dArrayResultsLabel;
+        private System.Windows.Forms.Button _2DarrayCalcBtn;
     }
 }
 
