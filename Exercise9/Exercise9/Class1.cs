@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 //Corrected by Matt Sievers
 namespace CST117_IC08_console
 {
-    class Set
+    /**
+     * IDE offered some assistance on updating the class to be internal class
+     * An internal class just makes it only accessible to the current project, just a simple code clean up. 
+     * class Set
+     */
+    internal class Set
     {
         private List<int> elements;
 
@@ -36,13 +41,17 @@ namespace CST117_IC08_console
 
         private bool containsElement(int val)
         {
-            for (int i = 0; i < elements.Count; i++)
+            foreach (var t in elements)
+                /**
+                 * this can be converted to a foreach loop.
+                 * for (int i = 0; i < elements.Count; i++)
+                 */
             {
                 /** 
                  * If statement was missing {} again, moved the bool check within them
                  * moved the return false to outside the if statement
                  */ 
-                if (val == elements[i])
+                if (val == t)
                 {
                     return true;
                 }
@@ -50,13 +59,19 @@ namespace CST117_IC08_console
                 //        else
                 //            return false;
             }
+
             return false;
         }
 
         public override string ToString()
         {
-            string str = "";
-            foreach (int i in elements)
+            /**
+             * updated the string and int to var
+             * string str = "";
+             * foreach (int i in elements)
+             */
+            var str = "";
+            foreach (var i in elements)
             {
                 str += i + " ";
             }
@@ -68,14 +83,26 @@ namespace CST117_IC08_console
             elements.Clear();
         }
 
-        public Set union(Set rhs)
-        {
+        /**
+         * since we done need to return a value, method signature needed to be updated to retrun void
+         * updated union to Union to match method syntax
+         * public Set union(Set rhs)
+         */
 
-            for (int i = 0; i < rhs.elements.Count; i++)
+        public void Union(Set rhs)
+        {
+            /**
+             * updated for loop to a for each
+             * for (int i = 0; i < rhs.elements.Count; i++)
+             */
+            foreach (var t in rhs.elements)
             {
-                this.addElement(rhs.elements[i]);
+                this.addElement(t);
             }
-            return rhs;
+            /**
+             * This is just returning the input to this method and is not needed.
+             * retunr rhs
+             */ 
         }
     }
 }

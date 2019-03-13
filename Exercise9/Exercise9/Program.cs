@@ -9,7 +9,11 @@ using System.Threading.Tasks;
 
 namespace CST117_IC08_console
 {
-    class Program
+    /**
+     * upated class to be Static and Internal to match the Set class
+     * class Program
+     */
+    internal static class Program
     {
 
         /**
@@ -33,7 +37,11 @@ namespace CST117_IC08_console
             //display each set and the union
             Console.WriteLine("A: " + A);
             Console.WriteLine("B: " + B);
-            Console.WriteLine("A union B: " + A.union(B));
+            /**
+             * removed the unneeded console log of A.union(B) as this is repeated on line 48.
+             * The logic of Union() was sound, but was returning the value of B
+             */ 
+            A.Union(B);
 
             //display original sets (should be unchanged)
             Console.WriteLine("After union operation");
