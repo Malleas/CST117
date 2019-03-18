@@ -19,8 +19,7 @@ namespace Programming_Project_4
 
         private void newGameBtn_Click(object sender, EventArgs e)
         {
-            int COLS = 3;
-            int ROWS = 3;
+           
             string TL = "";
             string TC = "";
             string TR = "";
@@ -30,33 +29,24 @@ namespace Programming_Project_4
             string BL = "";
             string BC = "";
             string BR = "";
-            int[,] gameboard = new int[COLS, ROWS];
-            Random rand = new Random();
-            for (int i = 0; i < ROWS; i++)
+            string[] piecesArray = new string[] { TL, TC, TR, CL, CC, CR, BL, BC, BR };
+            
+            for (int i = 0; i < piecesArray.Length; i++)
             {
-                for (int j = 0; j < COLS; j++)
-                {
-                    gameboard[i, j] = rand.Next(1); 
-                }
+                piecesArray[i] = Foo();
+                string response = CheckValue(piecesArray[i]);
+                piecesArray[i] = response;
             }
-            TL = gameboard[0,0].ToString();
-            TC = gameboard[0,1].ToString();
-            TR = gameboard[0,2].ToString();
-            CL = gameboard[1,0].ToString();
-            CC = gameboard[1,1].ToString();
-            CR = gameboard[1,2].ToString();
-            BL = gameboard[2,0].ToString();
-            BC = gameboard[2,1].ToString();
-            BR = gameboard[2,2].ToString();
-            topLeftLabel.Text = TL;
-            topCenterLabel.Text = TC;
-            topRightLabel.Text = TR;
-            centerLeftLabel.Text = CL;
-            centerCenterLabel.Text = CC;
-            centerRightLabel.Text = CR;
-            bottomLeftlabel.Text = BL;
-            bottomCenterLabel.Text = BC;
-            bottomRightLabel.Text = BR;
+
+            topLeftLabel.Text = piecesArray[0];
+            topCenterLabel.Text = piecesArray[1];
+            topRightLabel.Text = piecesArray[2];
+            centerLeftLabel.Text = piecesArray[3];
+            centerCenterLabel.Text = piecesArray[4];
+            centerRightLabel.Text = piecesArray[5];
+            bottomLeftlabel.Text = piecesArray[6];
+            bottomCenterLabel.Text = piecesArray[7];
+            bottomRightLabel.Text = piecesArray[8];
 
 
         }
@@ -66,16 +56,37 @@ namespace Programming_Project_4
             this.Close();
         }
 
-        private string CheckValue(int[,] boardLocation)
+        private string Foo()
         {
-            string O = "O";
-            string X = "X";
-            string value = boardLocation.ToString();
-            if(value == "0")
+            string response = "";
+            int COLS = 3;
+            int ROWS = 3;
+            int[,] gameboard = new int[COLS, ROWS];
+            Random rand = new Random();
+            for (int i = 0; i < ROWS; i++)
             {
-                return O;
+                for (int j = 0; j < COLS; j++)
+                {
+                    gameboard[i, j] = rand.Next(2);
+                    response = gameboard[i, j].ToString();
+                    
+                }
             }
-            return X;
+            return response;
+        }
+
+        private string CheckValue(string input)
+        {
+                if(input == "0")
+                {
+                    return "O";
+                }
+                else
+                {
+                    return "X";
+                }
+            }
+           
         }
     }
-}
+
