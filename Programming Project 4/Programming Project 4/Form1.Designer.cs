@@ -49,6 +49,7 @@
             this.richTextBox6 = new System.Windows.Forms.RichTextBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.winnerLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // exitBtn
@@ -258,11 +259,20 @@
             this.richTextBox2.TabIndex = 23;
             this.richTextBox2.Text = "";
             // 
+            // winnerLabel
+            // 
+            this.winnerLabel.AutoSize = true;
+            this.winnerLabel.Location = new System.Drawing.Point(122, 251);
+            this.winnerLabel.Name = "winnerLabel";
+            this.winnerLabel.Size = new System.Drawing.Size(0, 13);
+            this.winnerLabel.TabIndex = 42;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 273);
+            this.Controls.Add(this.winnerLabel);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.newGameBtn);
             this.Controls.Add(this.textBox1);
@@ -314,6 +324,7 @@
         private System.Windows.Forms.RichTextBox richTextBox6;
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Label winnerLabel;
     }
 }
 
