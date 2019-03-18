@@ -61,13 +61,16 @@ namespace Programming_Project_4
             bool xWinner = CheckForXWinner(TL, TC, TR, CL, CC, CR, BL, BC, BR);
             if (oWinner)
             {
-                winnerLabel.Text = "O Wins!";
+                winnerTextBox.TextAlign = HorizontalAlignment.Center;
+                winnerTextBox.Text = "O Wins!";
             }else if (xWinner)
             {
-                winnerLabel.Text = "X Wins!";
+                winnerTextBox.TextAlign = HorizontalAlignment.Center;
+                winnerTextBox.Text = "X Wins!";
             }else if(!oWinner && !xWinner)
             {
-                winnerLabel.Text = "Cats";
+                winnerTextBox.TextAlign = HorizontalAlignment.Center;
+                winnerTextBox.Text = "Cats";
             }
 
             

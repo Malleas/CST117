@@ -30,7 +30,7 @@
         {
             this.exitBtn = new System.Windows.Forms.Button();
             this.newGameBtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.winnerTextBox = new System.Windows.Forms.TextBox();
             this.bottomRightLabel = new System.Windows.Forms.Label();
             this.bottomCenterLabel = new System.Windows.Forms.Label();
             this.bottomLeftlabel = new System.Windows.Forms.Label();
@@ -49,7 +49,6 @@
             this.richTextBox6 = new System.Windows.Forms.RichTextBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.winnerLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // exitBtn
@@ -72,12 +71,12 @@
             this.newGameBtn.UseVisualStyleBackColor = true;
             this.newGameBtn.Click += new System.EventHandler(this.newGameBtn_Click);
             // 
-            // textBox1
+            // winnerTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(51, 199);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(183, 20);
-            this.textBox1.TabIndex = 39;
+            this.winnerTextBox.Location = new System.Drawing.Point(51, 199);
+            this.winnerTextBox.Name = "winnerTextBox";
+            this.winnerTextBox.Size = new System.Drawing.Size(183, 20);
+            this.winnerTextBox.TabIndex = 39;
             // 
             // bottomRightLabel
             // 
@@ -259,23 +258,14 @@
             this.richTextBox2.TabIndex = 23;
             this.richTextBox2.Text = "";
             // 
-            // winnerLabel
-            // 
-            this.winnerLabel.AutoSize = true;
-            this.winnerLabel.Location = new System.Drawing.Point(122, 251);
-            this.winnerLabel.Name = "winnerLabel";
-            this.winnerLabel.Size = new System.Drawing.Size(0, 13);
-            this.winnerLabel.TabIndex = 42;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 273);
-            this.Controls.Add(this.winnerLabel);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.newGameBtn);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.winnerTextBox);
             this.Controls.Add(this.bottomRightLabel);
             this.Controls.Add(this.bottomCenterLabel);
             this.Controls.Add(this.bottomLeftlabel);
@@ -305,7 +295,7 @@
 
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Button newGameBtn;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox winnerTextBox;
         private System.Windows.Forms.Label bottomRightLabel;
         private System.Windows.Forms.Label bottomCenterLabel;
         private System.Windows.Forms.Label bottomLeftlabel;
@@ -324,7 +314,6 @@
         private System.Windows.Forms.RichTextBox richTextBox6;
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Label winnerLabel;
     }
 }
 
