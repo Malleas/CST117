@@ -295,7 +295,7 @@
             this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.richTextBox2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Tic-Tac-Toe";
             this.ResumeLayout(false);
             this.PerformLayout();
 
