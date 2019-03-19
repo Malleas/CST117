@@ -13,7 +13,14 @@ namespace Milestone_2
     public partial class CurrentInventory : Form
     {
         InventoryManager iManager = new InventoryManager();
-        List<Inventory> inventory;
+        Inventory inventory = new Inventory();
+        List<Inventory> inventoryList;
+
+        public void GetInventory()
+        {
+            inventoryList = inventory.GetList();
+        }
+
         public CurrentInventory()
         {
             InitializeComponent();
@@ -26,7 +33,12 @@ namespace Milestone_2
 
         public void getInvBtn_Click(object sender, EventArgs e)
         {
-            //iManager.DisplayInventory(inputList)
+            List<Inventory> currentyInventory = iManager.DisplayInventory();
+            foreach(var item in currentyInventory)
+            {
+                currentInvListBox.Items.Add(currentyInventory);
+            }
+            
         }
     }
 }

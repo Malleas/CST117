@@ -9,7 +9,9 @@ namespace Milestone_2
     class InventoryManager
     {
         List<Inventory> currentInvetory = new List<Inventory>();
-        CurrentInventory ciForm = new CurrentInventory();
+        Inventory inventory = new Inventory();
+       
+       
 
         public void AddNewItem(string itemNumber, int quantity, string color, string size, string location)
         {
@@ -26,13 +28,11 @@ namespace Milestone_2
 
         }
 
-        public void DisplayInventory(List<Inventory> inventoryList)
+        public List<Inventory> DisplayInventory()
         {
-            this.currentInvetory = inventoryList;
-            foreach(var item in currentInvetory)
-            {
-                ciForm.currentInvListBox.Items.Add(item);
-            }
+            
+            inventory.ge
+                return currentList;
         }
         public void SearchItem(string location, string itemNumer)
         {

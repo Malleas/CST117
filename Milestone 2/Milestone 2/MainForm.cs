@@ -17,8 +17,9 @@ namespace Milestone_2
     public partial class MainForm : Form
     {
         InventoryManager iManager = new InventoryManager();
+        Inventory inventory = new Inventory();
         CurrentInventory currentInventory = new CurrentInventory();
-        List<Inventory> inventoryList = new List<Inventory>();
+        List<Inventory> inventoryList;
         public MainForm()
 
         {
@@ -41,6 +42,9 @@ namespace Milestone_2
 
         }
 
+        
+
+
         private void addBtn_Click(object sender, EventArgs e)
         {
             if (shirtRadioBtn.Checked || pantsRadioBtn.Checked || otherRadioBtn.Checked != false)
@@ -49,7 +53,7 @@ namespace Milestone_2
                 {
                     Inventory newShirt = new Inventory();
                     GetInventoryItemDetails(newShirt);
-                    inventoryList.Add(newShirt);
+                    inventory.InventoryList. (newShirt);
                     if(newShirt.quantity != 0)
                     {
                         inventoryListBox.Items.Add("Shirt " + newShirt.itemNumber + " " + newShirt.quantity + " " + newShirt.color + " " + newShirt.size + " " + newShirt.location);
@@ -129,7 +133,8 @@ namespace Milestone_2
         private void currentInvBtn_Click(object sender, EventArgs e)
         {
             currentInventory.ShowDialog();
-            iManager.DisplayInventory(inventoryList);
+            iManager.DisplayInventory();
         }
+
     }
 }
