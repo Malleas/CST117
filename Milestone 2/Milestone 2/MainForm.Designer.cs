@@ -39,13 +39,15 @@
             this.locationTextBox = new System.Windows.Forms.TextBox();
             this.addBtn = new System.Windows.Forms.Button();
             this.inputGroupBox = new System.Windows.Forms.GroupBox();
+            this.clearEntryBtn = new System.Windows.Forms.Button();
             this.otherRadioBtn = new System.Windows.Forms.RadioButton();
             this.pantsRadioBtn = new System.Windows.Forms.RadioButton();
             this.shirtRadioBtn = new System.Windows.Forms.RadioButton();
             this.selectItemGroupBox = new System.Windows.Forms.GroupBox();
             this.inventoryListBox = new System.Windows.Forms.ListBox();
             this.exitBtn = new System.Windows.Forms.Button();
-            this.clearEntryBtn = new System.Windows.Forms.Button();
+            this.currentInvBtn = new System.Windows.Forms.Button();
+            this.itemNumberLabel = new System.Windows.Forms.Label();
             this.inputGroupBox.SuspendLayout();
             this.selectItemGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -133,6 +135,7 @@
             // 
             // inputGroupBox
             // 
+            this.inputGroupBox.Controls.Add(this.itemNumberLabel);
             this.inputGroupBox.Controls.Add(this.clearEntryBtn);
             this.inputGroupBox.Controls.Add(this.otherRadioBtn);
             this.inputGroupBox.Controls.Add(this.pantsRadioBtn);
@@ -144,6 +147,17 @@
             this.inputGroupBox.TabIndex = 17;
             this.inputGroupBox.TabStop = false;
             this.inputGroupBox.Text = "Enter New Inventory Item";
+            // 
+            // clearEntryBtn
+            // 
+            this.clearEntryBtn.Location = new System.Drawing.Point(82, 182);
+            this.clearEntryBtn.Name = "clearEntryBtn";
+            this.clearEntryBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.clearEntryBtn.Size = new System.Drawing.Size(75, 23);
+            this.clearEntryBtn.TabIndex = 19;
+            this.clearEntryBtn.Text = "Clean";
+            this.clearEntryBtn.UseVisualStyleBackColor = true;
+            this.clearEntryBtn.Click += new System.EventHandler(this.clearEntryBtn_Click);
             // 
             // otherRadioBtn
             // 
@@ -207,22 +221,31 @@
             this.exitBtn.UseVisualStyleBackColor = true;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
-            // clearEntryBtn
+            // currentInvBtn
             // 
-            this.clearEntryBtn.Location = new System.Drawing.Point(82, 182);
-            this.clearEntryBtn.Name = "clearEntryBtn";
-            this.clearEntryBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.clearEntryBtn.Size = new System.Drawing.Size(75, 23);
-            this.clearEntryBtn.TabIndex = 19;
-            this.clearEntryBtn.Text = "Clean";
-            this.clearEntryBtn.UseVisualStyleBackColor = true;
-            this.clearEntryBtn.Click += new System.EventHandler(this.clearEntryBtn_Click);
+            this.currentInvBtn.Location = new System.Drawing.Point(85, 331);
+            this.currentInvBtn.Name = "currentInvBtn";
+            this.currentInvBtn.Size = new System.Drawing.Size(104, 23);
+            this.currentInvBtn.TabIndex = 19;
+            this.currentInvBtn.Text = "Current Inventory";
+            this.currentInvBtn.UseVisualStyleBackColor = true;
+            this.currentInvBtn.Click += new System.EventHandler(this.currentInvBtn_Click);
+            // 
+            // itemNumberLabel
+            // 
+            this.itemNumberLabel.AutoSize = true;
+            this.itemNumberLabel.Location = new System.Drawing.Point(9, 21);
+            this.itemNumberLabel.Name = "itemNumberLabel";
+            this.itemNumberLabel.Size = new System.Drawing.Size(67, 13);
+            this.itemNumberLabel.TabIndex = 20;
+            this.itemNumberLabel.Text = "Item Number";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(603, 419);
+            this.Controls.Add(this.currentInvBtn);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.selectItemGroupBox);
             this.Controls.Add(this.locationLabel);
@@ -265,6 +288,8 @@
         private System.Windows.Forms.RadioButton otherRadioBtn;
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Button clearEntryBtn;
+        private System.Windows.Forms.Label itemNumberLabel;
+        private System.Windows.Forms.Button currentInvBtn;
     }
 }
 

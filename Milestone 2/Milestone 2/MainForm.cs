@@ -16,6 +16,8 @@ namespace Milestone_2
 {
     public partial class MainForm : Form
     {
+        InventoryManager iManager = new InventoryManager();
+        CurrentInventory currentInventory = new CurrentInventory();
         List<Inventory> inventoryList = new List<Inventory>();
         public MainForm()
 
@@ -122,6 +124,12 @@ namespace Milestone_2
         private void clearEntryBtn_Click(object sender, EventArgs e)
         {
             clearFields();
+        }
+
+        private void currentInvBtn_Click(object sender, EventArgs e)
+        {
+            currentInventory.ShowDialog();
+            iManager.DisplayInventory(inventoryList);
         }
     }
 }
