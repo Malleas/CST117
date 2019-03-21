@@ -17,9 +17,7 @@ namespace Milestone_2
     public partial class MainForm : Form
     {
         InventoryManager iManager = new InventoryManager();
-        Inventory inventory = new Inventory();
-        CurrentInventory currentInventory = new CurrentInventory();
-        List<Inventory> inventoryList;
+        List<Inventory> inventoryList = new List<Inventory>();
         public MainForm()
 
         {
@@ -53,7 +51,7 @@ namespace Milestone_2
                 {
                     Inventory newShirt = new Inventory();
                     GetInventoryItemDetails(newShirt);
-                    inventory.InventoryList. (newShirt);
+                    inventoryList.Add(newShirt);
                     if(newShirt.quantity != 0)
                     {
                         inventoryListBox.Items.Add("Shirt " + newShirt.itemNumber + " " + newShirt.quantity + " " + newShirt.color + " " + newShirt.size + " " + newShirt.location);
@@ -132,9 +130,25 @@ namespace Milestone_2
 
         private void currentInvBtn_Click(object sender, EventArgs e)
         {
-            currentInventory.ShowDialog();
-            iManager.DisplayInventory();
+            
+            MessageBox.Show(iManager.DisplayInventory(inventoryList));
         }
 
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(iManager.SearchItem(inventoryList, searchInputTextBox.Text));
+        }
+
+        private void restockBtn_Click(object sender, EventArgs e)
+        {
+            iManager.ReStockItem(inventoryList, restockItemNumberTextInput.Text, int.Parse(qtyAdjustmentTextInput.Text));
+            MessageBox.Show("Inventory of " + restockItemNumberTextInput.Text + " has been updated" + "\n" + iManager.DisplayInventory(inventoryList));
+        }
+
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+            iManager.RemoveItem(inventoryList, removeItemTextBox.Text);
+            MessageBox.Show("item " + removeItemTextBox.Text + " has been removed" + "\n" + iManager.DisplayInventory(inventoryList));
+        }
     }
 }

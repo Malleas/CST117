@@ -39,6 +39,7 @@
             this.locationTextBox = new System.Windows.Forms.TextBox();
             this.addBtn = new System.Windows.Forms.Button();
             this.inputGroupBox = new System.Windows.Forms.GroupBox();
+            this.itemNumberLabel = new System.Windows.Forms.Label();
             this.clearEntryBtn = new System.Windows.Forms.Button();
             this.otherRadioBtn = new System.Windows.Forms.RadioButton();
             this.pantsRadioBtn = new System.Windows.Forms.RadioButton();
@@ -47,7 +48,16 @@
             this.inventoryListBox = new System.Windows.Forms.ListBox();
             this.exitBtn = new System.Windows.Forms.Button();
             this.currentInvBtn = new System.Windows.Forms.Button();
-            this.itemNumberLabel = new System.Windows.Forms.Label();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.searchInputTextBox = new System.Windows.Forms.TextBox();
+            this.searchLabel = new System.Windows.Forms.Label();
+            this.restockBtn = new System.Windows.Forms.Button();
+            this.restockItemNumberTextInput = new System.Windows.Forms.TextBox();
+            this.qtyAdjustmentTextInput = new System.Windows.Forms.TextBox();
+            this.restockItemNumberKabek = new System.Windows.Forms.Label();
+            this.qtyAdjustmentLabel = new System.Windows.Forms.Label();
+            this.removeBtn = new System.Windows.Forms.Button();
+            this.removeItemTextBox = new System.Windows.Forms.TextBox();
             this.inputGroupBox.SuspendLayout();
             this.selectItemGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -125,7 +135,7 @@
             // 
             // addBtn
             // 
-            this.addBtn.Location = new System.Drawing.Point(205, 182);
+            this.addBtn.Location = new System.Drawing.Point(205, 181);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(75, 23);
             this.addBtn.TabIndex = 15;
@@ -148,14 +158,23 @@
             this.inputGroupBox.TabStop = false;
             this.inputGroupBox.Text = "Enter New Inventory Item";
             // 
+            // itemNumberLabel
+            // 
+            this.itemNumberLabel.AutoSize = true;
+            this.itemNumberLabel.Location = new System.Drawing.Point(9, 21);
+            this.itemNumberLabel.Name = "itemNumberLabel";
+            this.itemNumberLabel.Size = new System.Drawing.Size(67, 13);
+            this.itemNumberLabel.TabIndex = 20;
+            this.itemNumberLabel.Text = "Item Number";
+            // 
             // clearEntryBtn
             // 
-            this.clearEntryBtn.Location = new System.Drawing.Point(82, 182);
+            this.clearEntryBtn.Location = new System.Drawing.Point(108, 181);
             this.clearEntryBtn.Name = "clearEntryBtn";
             this.clearEntryBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.clearEntryBtn.Size = new System.Drawing.Size(75, 23);
             this.clearEntryBtn.TabIndex = 19;
-            this.clearEntryBtn.Text = "Clean";
+            this.clearEntryBtn.Text = "Clear";
             this.clearEntryBtn.UseVisualStyleBackColor = true;
             this.clearEntryBtn.Click += new System.EventHandler(this.clearEntryBtn_Click);
             // 
@@ -213,7 +232,7 @@
             // 
             // exitBtn
             // 
-            this.exitBtn.Location = new System.Drawing.Point(264, 299);
+            this.exitBtn.Location = new System.Drawing.Point(12, 384);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(75, 23);
             this.exitBtn.TabIndex = 18;
@@ -223,7 +242,7 @@
             // 
             // currentInvBtn
             // 
-            this.currentInvBtn.Location = new System.Drawing.Point(85, 331);
+            this.currentInvBtn.Location = new System.Drawing.Point(12, 309);
             this.currentInvBtn.Name = "currentInvBtn";
             this.currentInvBtn.Size = new System.Drawing.Size(104, 23);
             this.currentInvBtn.TabIndex = 19;
@@ -231,20 +250,106 @@
             this.currentInvBtn.UseVisualStyleBackColor = true;
             this.currentInvBtn.Click += new System.EventHandler(this.currentInvBtn_Click);
             // 
-            // itemNumberLabel
+            // searchBtn
             // 
-            this.itemNumberLabel.AutoSize = true;
-            this.itemNumberLabel.Location = new System.Drawing.Point(9, 21);
-            this.itemNumberLabel.Name = "itemNumberLabel";
-            this.itemNumberLabel.Size = new System.Drawing.Size(67, 13);
-            this.itemNumberLabel.TabIndex = 20;
-            this.itemNumberLabel.Text = "Item Number";
+            this.searchBtn.Location = new System.Drawing.Point(12, 338);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(104, 23);
+            this.searchBtn.TabIndex = 20;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // searchInputTextBox
+            // 
+            this.searchInputTextBox.Location = new System.Drawing.Point(122, 341);
+            this.searchInputTextBox.Name = "searchInputTextBox";
+            this.searchInputTextBox.Size = new System.Drawing.Size(100, 20);
+            this.searchInputTextBox.TabIndex = 21;
+            // 
+            // searchLabel
+            // 
+            this.searchLabel.AutoSize = true;
+            this.searchLabel.Location = new System.Drawing.Point(12, 364);
+            this.searchLabel.Name = "searchLabel";
+            this.searchLabel.Size = new System.Drawing.Size(153, 13);
+            this.searchLabel.TabIndex = 22;
+            this.searchLabel.Text = "Search by Item Number or Size";
+            // 
+            // restockBtn
+            // 
+            this.restockBtn.Location = new System.Drawing.Point(277, 309);
+            this.restockBtn.Name = "restockBtn";
+            this.restockBtn.Size = new System.Drawing.Size(75, 23);
+            this.restockBtn.TabIndex = 23;
+            this.restockBtn.Text = "Restock";
+            this.restockBtn.UseVisualStyleBackColor = true;
+            this.restockBtn.Click += new System.EventHandler(this.restockBtn_Click);
+            // 
+            // restockItemNumberTextInput
+            // 
+            this.restockItemNumberTextInput.Location = new System.Drawing.Point(358, 311);
+            this.restockItemNumberTextInput.Name = "restockItemNumberTextInput";
+            this.restockItemNumberTextInput.Size = new System.Drawing.Size(100, 20);
+            this.restockItemNumberTextInput.TabIndex = 24;
+            // 
+            // qtyAdjustmentTextInput
+            // 
+            this.qtyAdjustmentTextInput.Location = new System.Drawing.Point(464, 311);
+            this.qtyAdjustmentTextInput.Name = "qtyAdjustmentTextInput";
+            this.qtyAdjustmentTextInput.Size = new System.Drawing.Size(100, 20);
+            this.qtyAdjustmentTextInput.TabIndex = 25;
+            // 
+            // restockItemNumberKabek
+            // 
+            this.restockItemNumberKabek.AutoSize = true;
+            this.restockItemNumberKabek.Location = new System.Drawing.Point(375, 295);
+            this.restockItemNumberKabek.Name = "restockItemNumberKabek";
+            this.restockItemNumberKabek.Size = new System.Drawing.Size(66, 13);
+            this.restockItemNumberKabek.TabIndex = 26;
+            this.restockItemNumberKabek.Text = "item Number";
+            // 
+            // qtyAdjustmentLabel
+            // 
+            this.qtyAdjustmentLabel.AutoSize = true;
+            this.qtyAdjustmentLabel.Location = new System.Drawing.Point(485, 295);
+            this.qtyAdjustmentLabel.Name = "qtyAdjustmentLabel";
+            this.qtyAdjustmentLabel.Size = new System.Drawing.Size(58, 13);
+            this.qtyAdjustmentLabel.TabIndex = 27;
+            this.qtyAdjustmentLabel.Text = "Quantity + ";
+            // 
+            // removeBtn
+            // 
+            this.removeBtn.Location = new System.Drawing.Point(277, 338);
+            this.removeBtn.Name = "removeBtn";
+            this.removeBtn.Size = new System.Drawing.Size(75, 23);
+            this.removeBtn.TabIndex = 21;
+            this.removeBtn.Text = "Remove";
+            this.removeBtn.UseVisualStyleBackColor = true;
+            this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
+            // 
+            // removeItemTextBox
+            // 
+            this.removeItemTextBox.Location = new System.Drawing.Point(358, 340);
+            this.removeItemTextBox.Name = "removeItemTextBox";
+            this.removeItemTextBox.Size = new System.Drawing.Size(100, 20);
+            this.removeItemTextBox.TabIndex = 28;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(603, 419);
+            this.Controls.Add(this.removeItemTextBox);
+            this.Controls.Add(this.removeBtn);
+            this.Controls.Add(this.qtyAdjustmentLabel);
+            this.Controls.Add(this.restockItemNumberKabek);
+            this.Controls.Add(this.qtyAdjustmentTextInput);
+            this.Controls.Add(this.restockItemNumberTextInput);
+            this.Controls.Add(this.restockBtn);
+            this.Controls.Add(this.searchLabel);
+            this.Controls.Add(this.searchInputTextBox);
+            this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.currentInvBtn);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.selectItemGroupBox);
@@ -290,6 +395,16 @@
         private System.Windows.Forms.Button clearEntryBtn;
         private System.Windows.Forms.Label itemNumberLabel;
         private System.Windows.Forms.Button currentInvBtn;
+        private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.TextBox searchInputTextBox;
+        private System.Windows.Forms.Label searchLabel;
+        private System.Windows.Forms.Button restockBtn;
+        private System.Windows.Forms.TextBox restockItemNumberTextInput;
+        private System.Windows.Forms.TextBox qtyAdjustmentTextInput;
+        private System.Windows.Forms.Label restockItemNumberKabek;
+        private System.Windows.Forms.Label qtyAdjustmentLabel;
+        private System.Windows.Forms.Button removeBtn;
+        private System.Windows.Forms.TextBox removeItemTextBox;
     }
 }
 

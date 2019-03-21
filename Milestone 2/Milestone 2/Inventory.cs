@@ -17,20 +17,7 @@ namespace Milestone_2
         public string color;
         public string size;
         public string location;
-        private List<Inventory> inventoryList = new List<Inventory>();
-
-        public List<Inventory> InventoryList
-        {
-            get
-            {
-                return inventoryList;
-            }
-
-            set
-            {
-                inventoryList = value;
-            }
-        }
+      
 
         public Inventory(string itemNumber, int quantity, string color, string size, string location)
         {
@@ -42,16 +29,6 @@ namespace Milestone_2
         }
 
         public Inventory() { }
-
-        public List<Inventory> GetList()
-        {
-            return InventoryList;
-        }
-
-        public void SetList(Inventory item)
-        {
-            this.InventoryList.Add(item);
-        }
 
         public String getItemNumber()
         {

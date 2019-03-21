@@ -13,31 +13,66 @@ namespace Milestone_2
        
        
 
-        public void AddNewItem(string itemNumber, int quantity, string color, string size, string location)
+        public void AddNewItem(List<Inventory> inputList, Inventory item)
         {
-
+          //  inputList.AddRange(item);
         }
 
-        public void RemoveItem(string itemNumber, int quantity)
+        public void RemoveItem(List<Inventory> inputList, string itemNumber)
         {
-
-        }
-
-        public void ReStockItem(string itemNumber, int quantity, string color, string size, string location)
-        {
-
-        }
-
-        public List<Inventory> DisplayInventory()
-        {
+            inputList.Remove(itemNumber);
+              
             
-            inventory.ge
-                return currentList;
+          
         }
-        public void SearchItem(string location, string itemNumer)
-        {
 
+        public void ReStockItem(List<Inventory> inputList,string itemNumber,int invAdjustment)
+        {
+           
+            foreach(var item in inputList)
+            {
+                if(item.itemNumber == itemNumber)
+                {
+                    item.quantity += invAdjustment;
+                }
+            }
+            
         }
+
+        public string DisplayInventory(List<Inventory> inputList)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach(var item in inputList)
+            {
+                
+                string currentLine = item.itemNumber + " " + item.quantity + " " + item.color + " " + item.size + " " + item.location;
+                sb.AppendLine(currentLine + "," + "\n");
+            }
+            return sb.ToString();
+        }
+        
+            
+            
+        
+        public string SearchItem(List<Inventory> inputList, string searchInput)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach(var item in inputList)
+            {
+                if(item.itemNumber == searchInput || item.size == searchInput)
+                {
+                    string results = item.itemNumber + " " + item.quantity + " " + item.color + " " + item.size + " " + item.location;
+                    sb.Append("Search Results for: " + searchInput + "\n");
+                    sb.AppendLine(results + "," + "\n");
+                }
+                else 
+                {
+                    return "Noting matches your entry";
+                }
+            }
+            return sb.ToString();
+        }
+
         
     }
 }
