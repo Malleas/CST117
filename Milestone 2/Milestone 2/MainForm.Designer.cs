@@ -232,9 +232,9 @@
             // 
             // exitBtn
             // 
-            this.exitBtn.Location = new System.Drawing.Point(12, 384);
+            this.exitBtn.Location = new System.Drawing.Point(15, 384);
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(75, 23);
+            this.exitBtn.Size = new System.Drawing.Size(556, 23);
             this.exitBtn.TabIndex = 18;
             this.exitBtn.Text = "Exit";
             this.exitBtn.UseVisualStyleBackColor = true;

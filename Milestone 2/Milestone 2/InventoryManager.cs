@@ -8,28 +8,29 @@ namespace Milestone_2
 {
     class InventoryManager
     {
-        List<Inventory> currentInvetory = new List<Inventory>();
-        Inventory inventory = new Inventory();
-       
-       
-
-        public void AddNewItem(List<Inventory> inputList, Inventory item)
+        private List<Inventory> inventoryList;
+        
+        public InventoryManager(List<Inventory> inventoryList)
         {
-          //  inputList.AddRange(item);
+            this.inventoryList = inventoryList;
+        }
+        
+
+        public void AddNewItem( Inventory item)
+        {
+           inventoryList.Add(item);
         }
 
-        public void RemoveItem(List<Inventory> inputList, string itemNumber)
+        public void RemoveItem(string itemNumber)
         {
-            inputList.Remove(itemNumber);
-              
-            
-          
+            inventoryList.Remove(inventoryList.Find(item => item.itemNumber == itemNumber));
+
         }
 
-        public void ReStockItem(List<Inventory> inputList,string itemNumber,int invAdjustment)
+        public void ReStockItem(string itemNumber,int invAdjustment)
         {
            
-            foreach(var item in inputList)
+            foreach(var item in inventoryList)
             {
                 if(item.itemNumber == itemNumber)
                 {
@@ -39,10 +40,10 @@ namespace Milestone_2
             
         }
 
-        public string DisplayInventory(List<Inventory> inputList)
+        public string DisplayInventory()
         {
             StringBuilder sb = new StringBuilder();
-            foreach(var item in inputList)
+            foreach(var item in inventoryList)
             {
                 
                 string currentLine = item.itemNumber + " " + item.quantity + " " + item.color + " " + item.size + " " + item.location;
@@ -54,10 +55,10 @@ namespace Milestone_2
             
             
         
-        public string SearchItem(List<Inventory> inputList, string searchInput)
+        public string SearchItem(string searchInput)
         {
             StringBuilder sb = new StringBuilder();
-            foreach(var item in inputList)
+            foreach(var item in inventoryList)
             {
                 if(item.itemNumber == searchInput || item.size == searchInput)
                 {
@@ -65,14 +66,17 @@ namespace Milestone_2
                     sb.Append("Search Results for: " + searchInput + "\n");
                     sb.AppendLine(results + "," + "\n");
                 }
-                else 
-                {
-                    return "Noting matches your entry";
-                }
             }
+            if (sb.Length == 0)
+            {
+                return "Nothing matches your entry";
+            }
+           
             return sb.ToString();
         }
 
         
     }
 }
+
+

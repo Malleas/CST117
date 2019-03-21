@@ -84,6 +84,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="InventoryClassUML.cd" />
+    <None Include="InventoryManager.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -16,12 +16,14 @@ namespace Milestone_2
 {
     public partial class MainForm : Form
     {
-        InventoryManager iManager = new InventoryManager();
         List<Inventory> inventoryList = new List<Inventory>();
+        private InventoryManager iManager;
+       
         public MainForm()
 
         {
             InitializeComponent();
+            iManager = new InventoryManager(inventoryList);
         }
 
         private void GetInventoryItemDetails(Inventory item)
@@ -51,7 +53,7 @@ namespace Milestone_2
                 {
                     Inventory newShirt = new Inventory();
                     GetInventoryItemDetails(newShirt);
-                    inventoryList.Add(newShirt);
+                    iManager.AddNewItem(newShirt);
                     if(newShirt.quantity != 0)
                     {
                         inventoryListBox.Items.Add("Shirt " + newShirt.itemNumber + " " + newShirt.quantity + " " + newShirt.color + " " + newShirt.size + " " + newShirt.location);
@@ -66,7 +68,7 @@ namespace Milestone_2
                 {
                     Inventory newPants = new Inventory();
                     GetInventoryItemDetails(newPants);
-                    inventoryList.Add(newPants);
+                    iManager.AddNewItem(newPants);
                     if(newPants.quantity != 0)
                     {
                         inventoryListBox.Items.Add("Pants " + newPants.itemNumber + " " + newPants.quantity + " " + newPants.color + " " + newPants.size + " " + newPants.location);
@@ -81,7 +83,7 @@ namespace Milestone_2
                 {
                     Inventory other = new Inventory();
                     GetInventoryItemDetails(other);
-                    inventoryList.Add(other);
+                    iManager.AddNewItem(other);
                     if(other.quantity != 0)
                     {
                         inventoryListBox.Items.Add("Other " + other.itemNumber + " " + other.quantity + " " + other.color + " " + other.size + " " + other.location);
@@ -131,24 +133,27 @@ namespace Milestone_2
         private void currentInvBtn_Click(object sender, EventArgs e)
         {
             
-            MessageBox.Show(iManager.DisplayInventory(inventoryList));
+            MessageBox.Show(iManager.DisplayInventory());
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(iManager.SearchItem(inventoryList, searchInputTextBox.Text));
+            MessageBox.Show(iManager.SearchItem(searchInputTextBox.Text));
         }
 
         private void restockBtn_Click(object sender, EventArgs e)
         {
-            iManager.ReStockItem(inventoryList, restockItemNumberTextInput.Text, int.Parse(qtyAdjustmentTextInput.Text));
-            MessageBox.Show("Inventory of " + restockItemNumberTextInput.Text + " has been updated" + "\n" + iManager.DisplayInventory(inventoryList));
+            iManager.ReStockItem(restockItemNumberTextInput.Text, int.Parse(qtyAdjustmentTextInput.Text));
+            MessageBox.Show("Inventory of " + restockItemNumberTextInput.Text + " has been updated" + "\n" + iManager.DisplayInventory());
+
         }
 
         private void removeBtn_Click(object sender, EventArgs e)
         {
-            iManager.RemoveItem(inventoryList, removeItemTextBox.Text);
-            MessageBox.Show("item " + removeItemTextBox.Text + " has been removed" + "\n" + iManager.DisplayInventory(inventoryList));
+            iManager.RemoveItem(removeItemTextBox.Text);
+            MessageBox.Show("item " + removeItemTextBox.Text + " has been removed" + "\n" + iManager.DisplayInventory());
         }
+
+       
     }
 }
