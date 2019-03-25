@@ -25,6 +25,13 @@ namespace ProgrammingProject5
                 int monthInput = int.Parse(monthInputTextBox.Text);
                 int dayInput = int.Parse(dayInputTextBox.Text);
                 double answer = CalculateAge(monthInput, dayInput);
+                if(blueRadioBtn.Checked == true )
+                {
+                    answerForm.colorLabel.Text = "You have chosen Blue, proceed";
+                }else 
+                {
+                    answerForm.colorLabel.Text = "You have chosen Green, you may pass!";
+                }
                 answerForm.answerlabel.Text = answer.ToString("n2");
                 answerForm.ShowDialog();
             }else

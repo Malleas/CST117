@@ -35,6 +35,8 @@
             this.birthDayLabel = new System.Windows.Forms.Label();
             this.calcBdayBtn = new System.Windows.Forms.Button();
             this.mainFormExitBtn = new System.Windows.Forms.Button();
+            this.blueRadioBtn = new System.Windows.Forms.RadioButton();
+            this.greenRadioBtn = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // dayOfBirthLabel
@@ -80,7 +82,7 @@
             // 
             // calcBdayBtn
             // 
-            this.calcBdayBtn.Location = new System.Drawing.Point(90, 157);
+            this.calcBdayBtn.Location = new System.Drawing.Point(90, 185);
             this.calcBdayBtn.Name = "calcBdayBtn";
             this.calcBdayBtn.Size = new System.Drawing.Size(115, 23);
             this.calcBdayBtn.TabIndex = 6;
@@ -90,7 +92,7 @@
             // 
             // mainFormExitBtn
             // 
-            this.mainFormExitBtn.Location = new System.Drawing.Point(90, 186);
+            this.mainFormExitBtn.Location = new System.Drawing.Point(90, 214);
             this.mainFormExitBtn.Name = "mainFormExitBtn";
             this.mainFormExitBtn.Size = new System.Drawing.Size(115, 23);
             this.mainFormExitBtn.TabIndex = 12;
@@ -98,11 +100,35 @@
             this.mainFormExitBtn.UseVisualStyleBackColor = true;
             this.mainFormExitBtn.Click += new System.EventHandler(this.mainFormExitBtn_Click);
             // 
+            // blueRadioBtn
+            // 
+            this.blueRadioBtn.AutoSize = true;
+            this.blueRadioBtn.Location = new System.Drawing.Point(90, 162);
+            this.blueRadioBtn.Name = "blueRadioBtn";
+            this.blueRadioBtn.Size = new System.Drawing.Size(46, 17);
+            this.blueRadioBtn.TabIndex = 13;
+            this.blueRadioBtn.TabStop = true;
+            this.blueRadioBtn.Text = "Blue";
+            this.blueRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // greenRadioBtn
+            // 
+            this.greenRadioBtn.AutoSize = true;
+            this.greenRadioBtn.Location = new System.Drawing.Point(151, 162);
+            this.greenRadioBtn.Name = "greenRadioBtn";
+            this.greenRadioBtn.Size = new System.Drawing.Size(54, 17);
+            this.greenRadioBtn.TabIndex = 14;
+            this.greenRadioBtn.TabStop = true;
+            this.greenRadioBtn.Text = "Green";
+            this.greenRadioBtn.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.greenRadioBtn);
+            this.Controls.Add(this.blueRadioBtn);
             this.Controls.Add(this.mainFormExitBtn);
             this.Controls.Add(this.dayOfBirthLabel);
             this.Controls.Add(this.monthOfBirthLabel);
@@ -126,6 +152,8 @@
         private System.Windows.Forms.Label birthDayLabel;
         private System.Windows.Forms.Button calcBdayBtn;
         private System.Windows.Forms.Button mainFormExitBtn;
+        private System.Windows.Forms.RadioButton blueRadioBtn;
+        private System.Windows.Forms.RadioButton greenRadioBtn;
     }
 }
 
