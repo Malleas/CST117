@@ -17,6 +17,7 @@ namespace Milestone_2
     public partial class MainForm : Form
     {
         CurrentInventoryForm currentInv = new CurrentInventoryForm();
+        LuckyForm lucky = new LuckyForm();
         SearchInventoryForm searchInv = new SearchInventoryForm();
         List<Inventory> inventoryList = new List<Inventory>();
         private InventoryManager iManager;
@@ -137,8 +138,17 @@ namespace Milestone_2
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            searchInv.searchResultsRichTextBox.Text = iManager.SearchItem(searchInputTextBox.Text);
-            searchInv.ShowDialog();
+            if(searchInputTextBox.Text == "Lucky")
+            {
+                lucky.ShowDialog();
+            }
+            else
+            {
+                searchInv.searchResultsRichTextBox.Text = iManager.SearchItem(searchInputTextBox.Text);
+                searchInv.ShowDialog();
+            }
+
+            
         }
 
         private void restockBtn_Click(object sender, EventArgs e)
@@ -152,7 +162,7 @@ namespace Milestone_2
         private void removeBtn_Click(object sender, EventArgs e)
         {
             iManager.RemoveItem(removeItemTextBox.Text);
-            MessageBox.Show("item " + removeItemTextBox.Text + " has been removed" + "\n" + iManager.DisplayInventory());
+            MessageBox.Show("item has been removed");
         }
 
        

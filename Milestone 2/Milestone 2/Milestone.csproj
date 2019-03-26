@@ -68,6 +68,12 @@
       <DependentUpon>CurrentInventoryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InventoryManager.cs" />
+    <Compile Include="LuckyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuckyForm.Designer.cs">
+      <DependentUpon>LuckyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     </Compile>
     <EmbeddedResource Include="CurrentInventoryForm.resx">
       <DependentUpon>CurrentInventoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LuckyForm.resx">
+      <DependentUpon>LuckyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -129,7 +138,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Milestone4 Presentation.mp4" />
+    <Content Include="Milestone Presentation Videos\Milestone4 Presentation.mp4" />
+    <Content Include="Milestone Presentation Videos\Milestone5 Presentation.mp4" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

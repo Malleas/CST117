@@ -15,7 +15,6 @@ namespace Milestone_2
         {
             this.inventoryList = inventoryList;
         }
-        
 
         public void AddNewItem( Inventory item)
         {
@@ -23,10 +22,8 @@ namespace Milestone_2
         }
 
         public void RemoveItem(string itemNumber)
-        {
-            //need a removeAll function here for multiple inventory items that share the same itemnumber
-            inventoryList.Remove(inventoryList.Find(item => item.itemNumber == itemNumber));
-
+        {       
+            inventoryList.RemoveAll(item => item.itemNumber == itemNumber);
         }
 
         public void ReStockItem(string itemNumber,int invAdjustment)
@@ -42,8 +39,7 @@ namespace Milestone_2
             }
             
         }
-
-       
+ 
         public string DisplayInventory()
         {
             StringBuilder sb = new StringBuilder();
@@ -55,9 +51,6 @@ namespace Milestone_2
             }
             return sb.ToString();
         }
-        
-            
-            
         
         public string SearchItem(string searchInput)
         {
