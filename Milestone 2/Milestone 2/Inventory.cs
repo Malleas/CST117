@@ -17,15 +17,17 @@ namespace Milestone_2
         public string color;
         public string size;
         public string location;
+        public string type;
       
 
-        public Inventory(string itemNumber, int quantity, string color, string size, string location)
+        public Inventory(string itemNumber, int quantity, string color, string size, string location, string type)
         {
             this.itemNumber = itemNumber;
             this.quantity = quantity;
             this.color = color;
             this.size = size;
             this.location = location;
+            this.type = type;
         }
 
         public Inventory() { }
@@ -76,6 +78,16 @@ namespace Milestone_2
         public void setLocation(String location)
         {
             this.location = location;
+        }
+
+        public String getType()
+        {
+            return type;
+        }
+
+        public void setType(String type)
+        {
+            this.type = type;
         }
 
     }

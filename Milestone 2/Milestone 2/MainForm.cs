@@ -16,6 +16,8 @@ namespace Milestone_2
 {
     public partial class MainForm : Form
     {
+        CurrentInventoryForm currentInv = new CurrentInventoryForm();
+        SearchInventoryForm searchInv = new SearchInventoryForm();
         List<Inventory> inventoryList = new List<Inventory>();
         private InventoryManager iManager;
        
@@ -42,9 +44,6 @@ namespace Milestone_2
 
         }
 
-        
-
-
         private void addBtn_Click(object sender, EventArgs e)
         {
             if (shirtRadioBtn.Checked || pantsRadioBtn.Checked || otherRadioBtn.Checked != false)
@@ -56,7 +55,7 @@ namespace Milestone_2
                     iManager.AddNewItem(newShirt);
                     if(newShirt.quantity != 0)
                     {
-                        inventoryListBox.Items.Add("Shirt " + newShirt.itemNumber + " " + newShirt.quantity + " " + newShirt.color + " " + newShirt.size + " " + newShirt.location);
+                        newShirt.type = "Shirt";
                         clearFields();
                     }
                     else
@@ -71,7 +70,7 @@ namespace Milestone_2
                     iManager.AddNewItem(newPants);
                     if(newPants.quantity != 0)
                     {
-                        inventoryListBox.Items.Add("Pants " + newPants.itemNumber + " " + newPants.quantity + " " + newPants.color + " " + newPants.size + " " + newPants.location);
+                        newPants.type = "Pants";
                         clearFields();
                     }
                     else
@@ -86,7 +85,7 @@ namespace Milestone_2
                     iManager.AddNewItem(other);
                     if(other.quantity != 0)
                     {
-                        inventoryListBox.Items.Add("Other " + other.itemNumber + " " + other.quantity + " " + other.color + " " + other.size + " " + other.location);
+                        other.type = "Other";
                         clearFields();
                     }
                     else
@@ -115,8 +114,8 @@ namespace Milestone_2
 
         private void inventoryListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = inventoryListBox.SelectedIndex;
-            MessageBox.Show("Current Available Inventory: " + inventoryList[index].quantity.ToString());
+            //int index = inventoryListBox.SelectedIndex;
+           // MessageBox.Show("Current Available Inventory: " + inventoryList[index].quantity.ToString());
 
         }
 
@@ -132,19 +131,21 @@ namespace Milestone_2
 
         private void currentInvBtn_Click(object sender, EventArgs e)
         {
-            
-            MessageBox.Show(iManager.DisplayInventory());
+            currentInv.currentInventoryRichTextBox.Text = iManager.DisplayInventory();
+            currentInv.ShowDialog();
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(iManager.SearchItem(searchInputTextBox.Text));
+            searchInv.searchResultsRichTextBox.Text = iManager.SearchItem(searchInputTextBox.Text);
+            searchInv.ShowDialog();
         }
 
         private void restockBtn_Click(object sender, EventArgs e)
         {
             iManager.ReStockItem(restockItemNumberTextInput.Text, int.Parse(qtyAdjustmentTextInput.Text));
             MessageBox.Show("Inventory of " + restockItemNumberTextInput.Text + " has been updated" + "\n" + iManager.DisplayInventory());
+            
 
         }
 

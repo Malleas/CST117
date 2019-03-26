@@ -8,6 +8,7 @@ namespace Milestone_2
 {
     class InventoryManager
     {
+        CurrentInventoryForm currentInv = new CurrentInventoryForm();
         private List<Inventory> inventoryList;
         
         public InventoryManager(List<Inventory> inventoryList)
@@ -32,6 +33,7 @@ namespace Milestone_2
            
             foreach(var item in inventoryList)
             {
+               
                 if(item.itemNumber == itemNumber)
                 {
                     item.quantity += invAdjustment;
@@ -40,13 +42,14 @@ namespace Milestone_2
             
         }
 
+       
         public string DisplayInventory()
         {
             StringBuilder sb = new StringBuilder();
             foreach(var item in inventoryList)
             {
                 
-                string currentLine = item.itemNumber + " " + item.quantity + " " + item.color + " " + item.size + " " + item.location;
+                string currentLine = item.type + " " + item.itemNumber + " " + item.quantity + " " + item.color + " " + item.size + " " + item.location;
                 sb.AppendLine(currentLine + "," + "\n");
             }
             return sb.ToString();
