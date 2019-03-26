@@ -24,6 +24,7 @@ namespace Milestone_2
 
         public void RemoveItem(string itemNumber)
         {
+            //need a removeAll function here for multiple inventory items that share the same itemnumber
             inventoryList.Remove(inventoryList.Find(item => item.itemNumber == itemNumber));
 
         }

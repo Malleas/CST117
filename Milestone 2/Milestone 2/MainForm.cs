@@ -51,10 +51,10 @@ namespace Milestone_2
                 if (shirtRadioBtn.Checked == true)
                 {
                     Inventory newShirt = new Inventory();
-                    GetInventoryItemDetails(newShirt);
-                    iManager.AddNewItem(newShirt);
+                    GetInventoryItemDetails(newShirt); 
                     if(newShirt.quantity != 0)
                     {
+                        iManager.AddNewItem(newShirt);
                         newShirt.type = "Shirt";
                         clearFields();
                     }
@@ -67,9 +67,9 @@ namespace Milestone_2
                 {
                     Inventory newPants = new Inventory();
                     GetInventoryItemDetails(newPants);
-                    iManager.AddNewItem(newPants);
                     if(newPants.quantity != 0)
                     {
+                        iManager.AddNewItem(newPants);
                         newPants.type = "Pants";
                         clearFields();
                     }
@@ -82,9 +82,9 @@ namespace Milestone_2
                 {
                     Inventory other = new Inventory();
                     GetInventoryItemDetails(other);
-                    iManager.AddNewItem(other);
                     if(other.quantity != 0)
                     {
+                        iManager.AddNewItem(other);
                         other.type = "Other";
                         clearFields();
                     }
